@@ -1,0 +1,13 @@
+:root{
+  --primary-color: #1e1e1e;
+}
+
+body{
+  background-color: var(--primary-color);
+}
+
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
