@@ -3,10 +3,11 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 30px;
-    background-color: var(--primary-color);
+    background-color: black;
     position: sticky;
     top: 0;
     z-index: 1;
+    gap: 20px;
 }
 
 header img{
@@ -42,3 +43,34 @@ nav ul {
     align-items: center;
     font-size: 15px;
 }
+
+.searchBar{
+    display: flex;
+    gap: 5px;
+    width: fit-content;
+    border-radius: 30px;
+    background-color: #f1f1f1;
+    padding: 10px;
+    border: none;
+    
+    
+}
+
+.searchBar > input{
+    background-color: transparent;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    color: black;
+    
+  }
+
+  .searchBar > input::-webkit-input-placeholder{
+    color: #888888;
+  }
+
+
+  .searchBar > span{
+    content: url("/public/searchIcon.svg");
+  }

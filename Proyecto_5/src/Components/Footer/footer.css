@@ -1,0 +1,103 @@
+
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    text-align: center;
+    flex-basis: 20%;
+    max-width: 100%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding: 20px;
+    gap: 20px;
+    border-top: 1px solid var(--grey);
+    color: white;
+    background-color: black;
+}
+
+footer ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-basis: 20%;
+    max-width: 100%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding: 20px;
+}
+
+footer ul li:first-child{
+    font-weight: bold;
+    font-size: 25px;
+}
+
+footer a{
+     color: white;
+}
+
+.sobre-nosotros{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-basis: 20%;
+    max-width: 100%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding: 20px;
+    width: 100%;
+
+}
+
+.sobre-nosotros img{
+    width: 50%;
+    max-width: 250px;
+    min-width: 100px;
+}
+
+.sobre-nosotros p{
+    text-align: center;
+    font-size: 15px;
+}
+
+.copyright{
+    width: 100%;
+}
+
+@media (max-width:549px) {
+    footer ul,footer, .sobre-nosotros {
+        min-width: 100%;
+    }
+    
+}
+
+.instagram::before{
+    content: url(/Instagram-logo.svg);
+}
+
+.tiktok::before{
+    content: url(/Tiktok-logo.svg);
+}
+
+.facebook::before{
+    content: url(/Facebook-logo.svg);
+}
+
+.x::before{
+    content: url(/X-logo.svg);
+}
+
+.instagram, .tiktok, .facebook, .x{
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+
+}
+
+.metodos-de-pago{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}

@@ -1,0 +1,1 @@
+import './productPage.css';

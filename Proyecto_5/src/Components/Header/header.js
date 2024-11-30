@@ -6,7 +6,12 @@ export const header = () => {
 
   header.innerHTML = `
     <img src="https://i.ibb.co/7zvZwvL/logo.png" alt="logo" id="logo">
+      <div class="searchBar">
+        <span></span>
+        <input id="searchBar" type="text" name="Search bar" placeholder="Search">
+        </div>
     <nav>
+  
         <ul>
             <li><a href="#">Productos</a></li>
             <li id="login"><a href="#">Iniciar Sesión</a></li>

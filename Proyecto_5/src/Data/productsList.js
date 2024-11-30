@@ -1,6 +1,7 @@
 export const productsList = [
     {
-        id: 1,
+      id: 1,
+      quantity: 1,
         name: 'HP Essentials 255 G8 AMD',
         price: 289,
         stars: '4/5',
@@ -11,6 +12,7 @@ export const productsList = [
       },
       {
         id: 2,
+        quantity: 1,
           name:'POCO X6 Pro 5G 12/512GB Negro Libre',
           price:322.90,
           stars:'4.7/5',
@@ -21,6 +23,7 @@ export const productsList = [
       },
       {
         id: 3,
+        quantity: 1,
           name:'Apple iPhone 15 Pro 128GB Titanio Natural Libre',
           price:1098.93,
           stars:'4.8/5',
@@ -31,6 +34,7 @@ export const productsList = [
       },
       {
         id: 4,
+        quantity: 1,
           name:'Apple iPhone 13 128GB Medianoche Libre',
           price:609.01,
           stars:'4.6/5',
@@ -41,6 +45,7 @@ export const productsList = [
       },
       {
         id: 5,
+        quantity: 1,
           name:'Móvil Samsung Galaxy S24 Ultra 12/512GB Negro Titanium Libre',
           price:1299,
           stars:'4.7/5',
@@ -51,6 +56,7 @@ export const productsList = [
       },
       {
         id: 6,
+        quantity: 1,
           name:'Móvil Apple iPhone 16 Plus 128GB Rosa',
           price:1109,
           stars:'4.8/5',
@@ -61,6 +67,7 @@ export const productsList = [
       },
       {
         id: 7,
+        quantity: 1,
           name:'Monitor ASUS ROG Strix OLED XG27AQDMG 26.5" OLED QHD 240Hz FreeSync Premium',
           price:649,
           stars:'4.7/5',
@@ -71,6 +78,7 @@ export const productsList = [
       },
       {
         id: 8,
+        quantity: 1,
           name:'Móvil Apple iPhone 16 Pro 128GB Titanio Desierto Libre',
           price:1219,
           stars:'4.6/5',
@@ -81,6 +89,7 @@ export const productsList = [
       },
       { 
         id: 9,
+        quantity: 1,
           name:'ASUS ROG Strix G16 G614JIR-N4003 Intel Core i9-14900HX/32GB/1TB SSD/RTX 4070/16"',
           price:1899,
           stars:'4.7/5',
@@ -91,6 +100,7 @@ export const productsList = [
       },
       { 
         id: 10,
+        quantity: 1,
           name:'LG 65UT73006LA 65" LED UltraHD 4K HDR10 Pro WebOS24 AI ThinQ',
           price:549,
           stars:'4.5/5',

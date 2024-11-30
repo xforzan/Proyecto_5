@@ -1,0 +1,136 @@
+
+.checkout-container{
+    display: flex;
+    padding: 20px;
+
+}
+
+.checkout-container h1, h2{
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+.checkoutForm{
+    width: 100%;
+    padding: 20px;
+}
+
+.checkoutSummary{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 60%;
+    border-radius: 30px;
+    background-color: black;
+    padding: 20px;
+
+}
+
+.productCheckout{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    border-radius: 30px;
+    gap: 10px;
+    padding: 20px;
+    min-height: fit-content;
+    box-shadow: 0px 0px 10px 1px #00000046;
+}
+
+.productCheckout img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+
+.product-info{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.product-name{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.product-price{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+
+.checkoutForm form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.checkoutForm form input{
+    padding: 10px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+}
+
+.checkoutForm form label{
+    color: white;
+}
+
+.checkoutButton{
+    padding: 10px;
+    border-radius: 30px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+}
+
+.applyCoupon{
+    padding: 10px;
+    border-radius: 30px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+}
+
+
+.coupon{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 20px;
+    border-radius: 30px;
+    gap: 10px;
+    box-shadow: 0px 0px 10px 1px #00000046;
+}
+
+
+.coupon input{
+    padding: 10px;
+    border-radius: 30px;
+    outline: none;
+    border: solid black 1px;
+}
+
+
+
+
+
+
+
+
+
+
+.details{
+    background-color: white;
+    color: black;
+    padding: 20px;
+    border-radius: 30px;
+}

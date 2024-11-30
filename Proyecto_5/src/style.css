@@ -7,6 +7,12 @@
 body{
   background-color: var(--primary-color);
   font-family: "Poppins", serif;
+  
+}
+
+main{
+  min-height: 100vh;
+  margin: 20px 0px
 }
 
 *{
