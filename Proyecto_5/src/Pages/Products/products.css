@@ -1,0 +1,33 @@
+.products-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding-inline: 20px;
+}
+
+.product {
+    display: flex;
+    /* justify-content: space-between; */
+    flex-direction: column;
+    background-color: white;
+    border-radius: 30px;
+    gap: 10px;
+    padding: 20px;
+    min-height: 490px;
+    box-shadow: 0px 0px 10px 1px #00000046;
+    transition: 0.5s;
+}
+
+.product:hover {
+    transform: scale(1.03);
+}
+.productButton{
+    padding: 10px;
+    border-radius: 30px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+}
