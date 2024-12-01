@@ -12,9 +12,9 @@ export const users = [
         password: '1234',
         avatar: 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png',
         boughtProducts: [
-            {id: 37864},
-            {id: 37865},
-            {id: 37866},
+            {id: 37864, quantity: 2},
+            {id: 37865, quantity: 1},
+            {id: 37866, quantity: 1},
 
         ],
     },
