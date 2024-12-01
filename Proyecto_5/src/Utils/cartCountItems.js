@@ -9,12 +9,11 @@ export const cartCountItems = (cartCount, cartCountElement) => {
     for (const item of cart){
       counter += item.quantity;
     }
-
+    cartCount = counter;
     if (cartCount > 98) {
       cartCountElement.textContent = '+99';
       localStorage.setItem('cartCount', '+99');
     } else{
-      cartCount++;
       cartCountElement.textContent = counter;
       localStorage.setItem('cartCount', counter);
     }
