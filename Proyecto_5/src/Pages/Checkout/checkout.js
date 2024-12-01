@@ -69,7 +69,7 @@ const checkoutContainer = document.createElement('div');
             const discount = coupon.discount;
             const subtotal = product.price;
             const shipping = 3.99;
-            const total = subtotal + shipping - discount;
+            const total = Math.max(0,subtotal + shipping - discount);
 
             document.getElementById('subtotal').textContent = subtotal;
             document.getElementById('discount').textContent = discount;
@@ -80,4 +80,13 @@ const checkoutContainer = document.createElement('div');
         }
 
     });
+
+
+
+
+    const checkoutButton = document.getElementById('checkoutButton');
+    checkoutButton.addEventListener('click', () => {
+        alert('Compra realizada con éxito');
+    });
+
 }

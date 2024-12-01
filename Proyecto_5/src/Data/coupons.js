@@ -14,5 +14,10 @@ export const coupons = [
         id: 3,
         code: '30OFF',
         discount: 30
+    },
+    {
+        id: 3,
+        code: 'ALLOFF',
+        discount: 10000
     }
 ];
