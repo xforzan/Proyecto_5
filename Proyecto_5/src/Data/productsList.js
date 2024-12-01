@@ -1,7 +1,7 @@
 export const productsList = [
     {
       id: 1,
-      quantity: 1,
+      quantity: 190,
         name: 'HP Essentials 255 G8 AMD',
         price: 289,
         stars: '4/5',

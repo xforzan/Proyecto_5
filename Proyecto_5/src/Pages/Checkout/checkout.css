@@ -1,19 +1,19 @@
 
 .checkout-container{
     display: flex;
-    padding: 20px;
+    padding: 40px;
+    gap: 40px;
 
 }
 
 .checkout-container h1, h2{
     width: 100%;
     text-align: center;
-    color: white;
+    color: black;
 }
 
 .checkoutForm{
     width: 100%;
-    padding: 20px;
 }
 
 .checkoutSummary{
@@ -24,7 +24,12 @@
     border-radius: 30px;
     background-color: black;
     padding: 20px;
+    height: fit-content;
 
+}
+
+.checkoutSummary h2{
+    color: white;
 }
 
 .productCheckout{
@@ -63,22 +68,60 @@
 
 
 
-.checkoutForm form{
+.checkoutForm{
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 50px;
+    color: black;
 }
 
-.checkoutForm form input{
+.checkoutForm input{
+    width: 50%;
     padding: 10px;
     border-radius: 30px;
-    border: none;
+    border: 1px solid black;
     outline: none;
 }
 
-.checkoutForm form label{
-    color: white;
+.personalInfo, .addressInfo, .paymentInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 20px;
+    background-color: #ebebeb;
+    padding: 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
 }
+
+
+.personalInfo input, .addressInfo input, .paymentInfo input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+
+.personalInfo input:focus, .addressInfo input:focus, .paymentInfo input:focus {
+    border-color: black;
+}
+
+
+.personalInfo h2, .addressInfo h2, .paymentInfo h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+
+.personalInfo input::placeholder, .addressInfo input::placeholder, .paymentInfo input::placeholder {
+    color: #888;
+}
+
 
 .checkoutButton{
     padding: 10px;
@@ -88,6 +131,7 @@
     text-align: center;
     cursor: pointer;
     border: none;
+    font-size: 20px;
 }
 
 .applyCoupon{
@@ -112,11 +156,17 @@
 }
 
 
-.coupon input{
+.coupon div input{
     padding: 10px;
     border-radius: 30px;
     outline: none;
     border: solid black 1px;
+    width: 100%;
+}
+
+.coupon div{
+    display: flex;
+    gap: 10px;
 }
 
 
@@ -133,4 +183,41 @@
     color: black;
     padding: 20px;
     border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.subtotal,.shipping,.discount,.total{
+    display: flex;
+    justify-content: space-between;
+}
+
+.subtotal span::after, .shipping span::after, .discount span::after, .total span::after{
+    content: "€";
+}
+
+.total{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+@media (max-width: 970px){
+    .checkout-container{
+        flex-wrap: wrap;
+    }
+    .checkoutSummary{
+        width: 100%;
+    }
+}
+
+@media (max-width: 410px){
+    .productCheckout{
+        flex-direction: column;
+    }
+    .checkout-container{
+        padding: 10px;
+    }
 }

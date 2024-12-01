@@ -1,40 +1,29 @@
 
+import { cart } from '../Data/cart';
 
 export const cartCountItems = (cartCount, cartCountElement) => {
 
-  const addCartCount = () => {
-    if (cartCount > 98) {
-        cartCountElement.textContent = '+99';
-        localStorage.setItem('cartCount', '+99');
-      } else {
-        cartCount++;
-        cartCountElement.textContent = cartCount;
-        localStorage.setItem('cartCount', cartCount);
-      }}
 
-
-  const removeCartCount = () => {
-    if (cartCountElement.textContent === '+99') {
-      cartCount = 99;
-      cartCountElement.textContent = cartCount;
-      localStorage.setItem('cartCount', cartCount);
+  const count = () => {
+    let counter = 0;
+    for (const item of cart){
+      counter += item.quantity;
     }
-    else if (cartCount > 0) {
-      console.log("barvaro")
-      cartCount--;
-      cartCountElement.textContent = cartCount;
-      localStorage.setItem('cartCount', cartCount);
+
+    if (cartCount > 98) {
+      cartCountElement.textContent = '+99';
+      localStorage.setItem('cartCount', '+99');
+    } else{
+      cartCount++;
+      cartCountElement.textContent = counter;
+      localStorage.setItem('cartCount', counter);
     }
     
-  };
-
-
-  const addProductButton = document.querySelector('#add-to-cart');
-  const removeProductButton = document.querySelector('#remove-from-cart');
-  if (addProductButton) {
-    addProductButton.addEventListener('click', addCartCount);
   }
-  if (removeProductButton) {
-    removeProductButton.addEventListener('click', removeCartCount);
-  }
+  
+  const addProductButton = document.querySelectorAll('.add');
+  addProductButton.forEach((button) => {
+    button.addEventListener('click', count);
+    });
 };
+

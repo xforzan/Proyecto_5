@@ -1,6 +1,4 @@
-export const cart = [
 
-    
+const localCart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
 
-    {id: 37864, quantity: 1},
-];
+export const cart = localCart;
