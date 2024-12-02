@@ -7,6 +7,7 @@ import { linkPage } from './Utils/linkPage';
 import { header } from './Components/Header/header';
 import { products } from './Pages/Products/products';
 import { footer } from './Components/Footer/footer';
+import { navigationMobile } from './Components/NavigationMobile/navigationMobile';
 
 products();
 header();

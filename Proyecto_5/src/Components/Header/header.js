@@ -10,7 +10,7 @@ export const header = () => {
         <span></span>
         <input id="searchBar" type="text" name="Search bar" placeholder="Search">
         </div>
-    <nav>
+    <nav class="headerNav">
   
         <ul>
             <li><a href="#">Productos</a></li>
