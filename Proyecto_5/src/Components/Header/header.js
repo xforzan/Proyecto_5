@@ -16,7 +16,7 @@ export const header = () => {
             <li><a href="#">Productos</a></li>
             <li id="login"><a href="#">Iniciar Sesión</a></li>
             <li id="cart" class="cartIcon-container">
-                    <img src="./shopping-bag.svg" alt"shopping bag" class"shoppingBag">
+                    <img src="./shopping-bag.svg" alt"shopping bag">
                     <span id="cart-count"></span>
             </li>
         </ul>

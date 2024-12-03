@@ -43,6 +43,12 @@
     font-size: 15px;
 }
 
+
+.shoppingBag{
+    width: 30px;
+    height: 30px;
+}
+
 @media (max-width: 675px){
     .navMobile{
         display: flex;
