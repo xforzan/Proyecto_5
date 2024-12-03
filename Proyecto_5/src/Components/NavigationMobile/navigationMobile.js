@@ -4,6 +4,7 @@ import { userStatus } from '../../Data/userStatus';
 import { account } from '../../Pages/Account/account';
 import { linkPage } from '../../Utils/linkPage';
 import { login } from '../../Pages/Login/login';
+import { users } from '../../Data/users';
 
 export const navigationMobile = () => {
 
@@ -17,7 +18,7 @@ export const navigationMobile = () => {
                     <img src="./shopping-bag.svg" alt"shopping bag" class="shoppingBag">
                     <span id="cart-count2"></span>
                 </li>
-                <li class="avatar" id="account"><img src="/account.png" alt="avatar"</li>
+                <li class="avatar" id="account"><img class="avatarImg" src="/account.png" alt="avatar"</li>
             </ul>`
     
     document.body.appendChild(nav);
@@ -39,6 +40,9 @@ export const navigationMobile = () => {
     }
     else{
         linkPage("#account", account);
+        const avatarImg = document.querySelector('.avatarImg');
+        const user = users.find(u => u.id === userStatus.id);
+        avatarImg.src = user.avatar;
     }
 };
 
