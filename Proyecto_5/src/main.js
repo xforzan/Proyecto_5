@@ -1,5 +1,6 @@
 import './style.css'
 
+
 import { cart } from './Pages/Cart/cart';
 import { login } from './Pages/Login/login';
 import { account } from './Pages/Account/account';
@@ -11,6 +12,7 @@ import { navigationMobile } from './Components/NavigationMobile/navigationMobile
 
 products();
 header();
+navigationMobile();
 
 footer();
 

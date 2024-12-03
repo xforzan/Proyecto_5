@@ -22,6 +22,27 @@
     justify-items: center;
 }
 
+
+.home::before{
+    content: url(../../../public/home.svg);
+}
+
+
+#cart-count2 {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    min-width: 24px;
+    min-height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+}
+
 @media (max-width: 675px){
     .navMobile{
         display: flex;
