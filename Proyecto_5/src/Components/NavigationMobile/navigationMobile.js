@@ -1,6 +1,9 @@
 import './navigationMobile.css';
 import { cartCountItems } from '../../Utils/cartCountItems';
 import { userStatus } from '../../Data/userStatus';
+import { account } from '../../Pages/Account/account';
+import { linkPage } from '../../Utils/linkPage';
+import { login } from '../../Pages/Login/login';
 
 export const navigationMobile = () => {
 
@@ -30,11 +33,12 @@ export const navigationMobile = () => {
     if (userStatus.logged === false){
         const avatar = document.querySelector('#account');
         if(avatar.id === 'account'){
-            avatar.id = 'login';
+            avatar.id = 'loginMobile';
+            linkPage("#loginMobile", login);
         }
     }
     else{
-        return;
+        linkPage("#account", account);
     }
 };
 

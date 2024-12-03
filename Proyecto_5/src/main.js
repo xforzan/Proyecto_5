@@ -20,5 +20,5 @@ linkPage('#cart', cart);
 linkPage("#logo", products);
 linkPage("#login", login);
 linkPage("#home", products);
-linkPage("#account", account);
+
 // linkPage("#account", account);
