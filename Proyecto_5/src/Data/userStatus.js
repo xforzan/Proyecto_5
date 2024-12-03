@@ -1,5 +1,5 @@
 
 export const userStatus = {
-    logged: false,
-    id: 1,
+    logged: true,
+    id: 3,
 };
