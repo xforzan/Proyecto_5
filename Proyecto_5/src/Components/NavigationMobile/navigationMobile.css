@@ -23,7 +23,7 @@
 }
 
 
-.home::before{
+#home::before{
     content: url(../../../public/home.svg);
 }
 
