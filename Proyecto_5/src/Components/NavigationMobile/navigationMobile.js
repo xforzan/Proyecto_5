@@ -42,7 +42,7 @@ export const navigationMobile = () => {
     }
     else{
         linkPage("#account", account);
-        const avatarImg = document.querySelector('.avatarImg');
+        const avatarImg = document.querySelector('.avatarImgMobile');
         const user = users.find(u => u.id === userStatus.id);
         avatarImg.src = user.avatar;
         avatarImg.alt = "avatar";
