@@ -1,5 +1,6 @@
 import './navigationMobile.css';
 import { cartCountItems } from '../../Utils/cartCountItems';
+import { userStatus } from '../../Data/userStatus';
 
 export const navigationMobile = () => {
 
@@ -13,7 +14,7 @@ export const navigationMobile = () => {
                     <img src="./shopping-bag.svg" alt"shopping bag" class="shoppingBag">
                     <span id="cart-count2"></span>
                 </li>
-                <li id="account"><img src="/account.png" alt="avatar"</li>
+                <li class="avatar" id="account"><img src="/account.png" alt="avatar"</li>
             </ul>`
     
     document.body.appendChild(nav);
@@ -24,5 +25,16 @@ export const navigationMobile = () => {
     cartCountElement.textContent = cartCount2;
 
     cartCountItems(cartCount2, cartCountElement);
+
+
+    if (userStatus.logged === false){
+        const avatar = document.querySelector('#account');
+        if(avatar.id === 'account'){
+            avatar.id = 'login';
+        }
+    }
+    else{
+        return;
+    }
 };
 

@@ -1,4 +1,4 @@
 
 export const userStatus = {
-    logged: false,
+    logged: true,
 };
