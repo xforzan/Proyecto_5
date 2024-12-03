@@ -1,4 +1,9 @@
 import { cartCountItems } from '../../Utils/cartCountItems';
+import { userStatus } from '../../Data/userStatus';
+import { users } from '../../Data/users';
+import { account } from '../../Pages/Account/account';
+import { login } from '../../Pages/Login/login';
+import { linkPage } from '../../Utils/linkPage';
 import './header.css';
 
 export const header = () => {
@@ -14,11 +19,13 @@ export const header = () => {
   
         <ul>
             <li><a href="#">Productos</a></li>
-            <li id="login"><a href="#">Iniciar Sesión</a></li>
             <li id="cart" class="cartIcon-container">
                     <img src="./shopping-bag.svg" alt"shopping bag">
                     <span id="cart-count"></span>
             </li>
+            <li class="avatar" id="account">
+                <img class="avatarImg" src="/account.png" alt="Iniciar Sesión" title="Iniciar Sesión">
+                </li>
         </ul>
     </nav>
   `;
@@ -30,4 +37,20 @@ export const header = () => {
   cartCountElement.textContent = cartCount;
 
   cartCountItems(cartCount, cartCountElement);
+
+
+  if (userStatus.logged === false){
+    const avatar = document.querySelector('#account');
+    if(avatar.id === 'account'){
+        avatar.id = 'login';
+        linkPage("#login", login);
+    }
+}
+else{
+    linkPage("#account", account);
+    const avatarImg = document.querySelector('.avatarImg');
+    const user = users.find(u => u.id === userStatus.id);
+    avatarImg.src = user.avatar;
+    avatarImg.alt = "avatar";
+}
 };

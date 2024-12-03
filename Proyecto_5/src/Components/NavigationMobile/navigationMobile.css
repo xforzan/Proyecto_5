@@ -50,12 +50,13 @@
     height: 30px;
 }
 
-.avatarImg{
+.avatarImgMobile{
     border-radius: 50%;
     object-fit: cover;
     object-position: top;
     width: 40px;
     height: 40px;
+    cursor: pointer;
 }
 
 @media (max-width: 675px){

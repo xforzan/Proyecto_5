@@ -18,7 +18,9 @@ export const navigationMobile = () => {
                     <img src="./shopping-bag.svg" alt"shopping bag" class="shoppingBag">
                     <span id="cart-count2"></span>
                 </li>
-                <li class="avatar" id="account"><img class="avatarImg" src="/account.png" alt="avatar"</li>
+                <li class="avatar" id="account">
+                <img class="avatarImgMobile" src="/account.png" alt="Iniciar Sesión" title="Iniciar Sesión">
+                </li>
             </ul>`
     
     document.body.appendChild(nav);
@@ -43,6 +45,7 @@ export const navigationMobile = () => {
         const avatarImg = document.querySelector('.avatarImg');
         const user = users.find(u => u.id === userStatus.id);
         avatarImg.src = user.avatar;
+        avatarImg.alt = "avatar";
     }
 };
 
