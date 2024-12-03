@@ -34,7 +34,7 @@ export const navigationMobile = () => {
 
 
     if (userStatus.logged === false){
-        const avatar = document.querySelector('#account');
+        const avatar = document.querySelector('#accountMobile');
         if(avatar.id === 'account'){
             avatar.id = 'loginMobile';
             linkPage("#loginMobile", login);
