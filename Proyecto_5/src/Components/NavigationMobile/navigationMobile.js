@@ -18,7 +18,7 @@ export const navigationMobile = () => {
                     <img src="./shopping-bag.svg" alt"shopping bag" class="shoppingBag">
                     <span id="cart-count2"></span>
                 </li>
-                <li class="avatar" id="account">
+                <li class="avatar" id="accountMobile">
                 <img class="avatarImgMobile" src="/account.png" alt="Iniciar Sesión" title="Iniciar Sesión">
                 </li>
             </ul>`
@@ -41,7 +41,7 @@ export const navigationMobile = () => {
         }
     }
     else{
-        linkPage("#account", account);
+        linkPage("#accountMobile", account);
         const avatarImg = document.querySelector('.avatarImgMobile');
         const user = users.find(u => u.id === userStatus.id);
         avatarImg.src = user.avatar;
