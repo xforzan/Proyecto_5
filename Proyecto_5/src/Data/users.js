@@ -20,10 +20,12 @@ export const users = [
     },
     {
         id: 2,
+        name: 'Ana',
         avatar: 'https://images6.alphacoders.com/124/1243927.jpg',
     },
     {
         id: 3,
+        name: 'Pedro',
         avatar: 'https://i.pinimg.com/736x/72/18/3f/72183f533d3a3ffcabf61f03c62b619c.jpg',
     }
 ];
