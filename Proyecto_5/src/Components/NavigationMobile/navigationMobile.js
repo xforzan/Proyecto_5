@@ -7,7 +7,7 @@ export const navigationMobile = () => {
     nav.className = 'navMobile';
     nav.innerHTML = `
             <ul>
-                <li class="home"><a href="#home"></a></li>
+                <li id="home"><a href="#home"></a></li>
                 <li><a href="#about">About</a></li>
                 <li><img src="../../public/account.svg" alt="avatar"</li>
                 <li id="cart" class="cartIcon-container">
