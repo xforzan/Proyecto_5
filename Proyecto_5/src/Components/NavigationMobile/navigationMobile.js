@@ -9,10 +9,11 @@ export const navigationMobile = () => {
             <ul>
                 <li id="home"><a href="#home"></a></li>
                 <li><a href="#about">About</a></li>
-                <li id="account"><img src="/account.png" alt="avatar"</li>
                 <li id="cart" class="cartIcon-container">
                     <img src="./shopping-bag.svg" alt"shopping bag" class="shoppingBag">
                     <span id="cart-count2"></span>
+                </li>
+                <li id="account"><img src="/account.png" alt="avatar"</li>
             </ul>`
     
     document.body.appendChild(nav);
