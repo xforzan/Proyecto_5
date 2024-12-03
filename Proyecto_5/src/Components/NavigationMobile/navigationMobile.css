@@ -50,6 +50,11 @@
     height: 30px;
 }
 
+#account img{
+    width: 50px;
+    height: 50px;
+}
+
 @media (max-width: 675px){
     .navMobile{
         display: flex;
