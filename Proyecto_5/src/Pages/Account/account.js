@@ -114,7 +114,29 @@ export const account = () => {
     accountSection.style.display = 'block';
   });
 
+  window.leftClick = () => {
+    const btn = document.getElementById('btn');
+    btn.style.left = '0';
+    if (ordersBtn.classList.contains('unselected')) {
+      ordersBtn.classList.remove('unselected');
+      ordersBtn.classList.add('selected');
+      accountBtn.classList.remove('selected');
+      accountBtn.classList.add('unselected');
+    }
+    
 
+};
+
+window.rightClick = () => {
+    const btn = document.getElementById('btn');
+    btn.style.left = '100px';
+    if (accountBtn.classList.contains('unselected')) {
+      accountBtn.classList.remove('unselected');
+      accountBtn.classList.add('selected');
+      ordersBtn.classList.remove('selected');
+      ordersBtn.classList.add('unselected');
+    }
+};
 
 
 
@@ -239,34 +261,6 @@ export const account = () => {
   });
 
 
-
-
-
-
-
-  window.leftClick = () => {
-    const btn = document.getElementById('btn');
-    btn.style.left = '0';
-    if (ordersBtn.classList.contains('unselected')) {
-      ordersBtn.classList.remove('unselected');
-      ordersBtn.classList.add('selected');
-      accountBtn.classList.remove('selected');
-      accountBtn.classList.add('unselected');
-    }
-    
-
-};
-
-window.rightClick = () => {
-    const btn = document.getElementById('btn');
-    btn.style.left = '100px';
-    if (accountBtn.classList.contains('unselected')) {
-      accountBtn.classList.remove('unselected');
-      accountBtn.classList.add('selected');
-      ordersBtn.classList.remove('selected');
-      ordersBtn.classList.add('unselected');
-    }
-};
 
 
 
