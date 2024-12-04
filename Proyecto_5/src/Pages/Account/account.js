@@ -129,7 +129,7 @@ export const account = () => {
 
 window.rightClick = () => {
     const btn = document.getElementById('btn');
-    btn.style.left = '100px';
+    btn.style.left = '140px';
     if (accountBtn.classList.contains('unselected')) {
       accountBtn.classList.remove('unselected');
       accountBtn.classList.add('selected');
