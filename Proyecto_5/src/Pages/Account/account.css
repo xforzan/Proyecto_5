@@ -168,7 +168,7 @@
   }
   
   .changeBtn {
-    padding: 10px 35px;
+    padding: 10px 30px;
     cursor: pointer;
     background: transparent;
     border: 0;
@@ -190,3 +190,10 @@
 
 
 
+#ordersBtn::before{
+  content: url("/order.svg");
+}
+
+#accountBtn::before{
+  content: url("/accountSettings.svg");
+}

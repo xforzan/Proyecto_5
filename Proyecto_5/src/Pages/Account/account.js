@@ -27,8 +27,8 @@ export const account = () => {
     <section class="changeContent">
       <div class="btns">
       <div id="btn"></div>
-        <button type="button" class="changeBtn" id="ordersBtn" onclick="leftClick()">😊</button>
-        <button type="button" class="changeBtn" id="accountBtn" onclick="rightClick()">❤️<span></span></button>
+        <button type="button" class="changeBtn" id="ordersBtn" onclick="leftClick()"></button>
+        <button type="button" class="changeBtn" id="accountBtn" onclick="rightClick()"></button>
       </div>
 
 
