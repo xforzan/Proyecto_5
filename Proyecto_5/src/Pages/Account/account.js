@@ -26,9 +26,14 @@ export const account = () => {
     
     <section class="changeContent">
       <div class="btns">
-        <button type="button" class="changeBtn" id="ordersBtn">Pedidos</button>
-        <button type="button" class="changeBtn" id="accountBtn">Detalles de la cuenta</button>
+      <div id="btn"></div>
+        <button type="button" class="changeBtn" id="ordersBtn" onclick="leftClick()">😊</button>
+        <button type="button" class="changeBtn" id="accountBtn" onclick="rightClick()">❤️<span></span></button>
       </div>
+
+
+
+
       
       <div id="ordersSection" class="sectionContent" style="display:none;">
         <h3>Mis Pedidos</h3>
@@ -223,4 +228,28 @@ export const account = () => {
     logOut();
     window.location.reload();
   });
+
+
+
+
+
+
+
+
+  window.leftClick = () => {
+    const btn = document.getElementById('btn');
+    btn.style.left = '0';
+};
+
+window.rightClick = () => {
+    const btn = document.getElementById('btn');
+    btn.style.left = '100px';
+};
+
+
+
+
+
+
+
 };
