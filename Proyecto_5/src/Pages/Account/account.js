@@ -101,35 +101,59 @@ export const account = () => {
   });
 
 
-  const purchasedProductsList = document.getElementById('purchasedProducts');
-  user.boughtProducts.forEach(product => {
-
-    const productDetails = productsList.find(p => p.id === product.id);
 
 
-    if (productDetails) {
-      const productItem = document.createElement('li');
+
+
+  if (user.boughtProducts.length === 0) {
+    const productItem = document.createElement('li');
+    const purchasedProductsList = document.getElementById('purchasedProducts');
+    console.log('No tienes compras realizadas');
+    productItem.innerHTML = `
+    <h3>No tienes compras realizadas</h3>`;
+    purchasedProductsList.appendChild(productItem);
+
+  }
+  else {
+
+    const purchasedProductsList = document.getElementById('purchasedProducts');
+    user.boughtProducts.forEach(product => {
+  
+      const productDetails = productsList.find(p => p.id === product.id);
+  
+  
       
-
-      const productQuantity = product.quantity || 1;
-
-      productItem.innerHTML = ` 
-        <div class="productInfo">
-          <img src="${productDetails.image}" alt="${productDetails.name}" class="product-image">
-          <div class="productDetails">
-            <strong>${productDetails.name}</strong>
-            <span>Cantidad: ${productQuantity}</span>
-            Precio: ${productDetails.price}
+  
+  
+      if (productDetails) {
+        const productItem = document.createElement('li');
+        
+  
+        const productQuantity = product.quantity;
+  
+        productItem.innerHTML = ` 
+          <div class="productInfo">
+            <img src="${productDetails.image}" alt="${productDetails.name}" class="product-image">
+            <div class="productDetails">
+              <strong>${productDetails.name}</strong>
+              <span>Cantidad: ${productQuantity}</span>
+              Precio: ${productDetails.price}
+            </div>
           </div>
-        </div>
-      `;
+        `;
+        
+        purchasedProductsList.appendChild(productItem);
+      }
+  
       
-      purchasedProductsList.appendChild(productItem);
-    } else {
+    });
 
-      console.error(`Producto con id ${product.id} no encontrado en la lista de productos.`);
-    }
-  });
+  }
+
+
+
+
+  
 
 
   const editForm = document.getElementById('editForm');

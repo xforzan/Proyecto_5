@@ -50,12 +50,13 @@
 
 .changeContent div{
   padding: 20px;
-  /* width: 100%; */
   max-width: 900px;
 }
 
+#accountSection{
+  width: 100%;
 
-
+}
 
 #editForm{
   display: none;

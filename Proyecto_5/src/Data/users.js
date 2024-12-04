@@ -16,11 +16,12 @@ let localUsers = localStorage.getItem('users')
           boughtProducts: [
               {id: 1, quantity: 2},
               {id: 3, quantity: 1},
+              {id: 4, quantity: 69},
               {id: 6, quantity: 1},
               {id: 7, quantity: 1},
               {id: 8, quantity: 1},
               {id: 9, quantity: 1},
-              
+
           ],
       },
       {
