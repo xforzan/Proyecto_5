@@ -33,7 +33,6 @@ export const account = () => {
       <div id="ordersSection" class="sectionContent" style="display:none;">
         <h3>Mis Pedidos</h3>
         <ul id="purchasedProducts">
-          <!-- Los productos se cargarán dinámicamente -->
         </ul>
       </div>
       
@@ -115,13 +114,13 @@ export const account = () => {
       const productQuantity = product.quantity || 1;
 
       productItem.innerHTML = ` 
-        <div class="product-info">
+        <div class="productInfo">
           <img src="${productDetails.image}" alt="${productDetails.name}" class="product-image">
-          <div class="product-details">
-            <strong>${productDetails.name}</strong><br>
-            <span>Cantidad: ${productQuantity}</span><br>
+          <div class="productDetails">
+            <strong>${productDetails.name}</strong>
+            <span>Cantidad: ${productQuantity}</span>
             Fecha de compra: ${product.date}<br>
-            Precio: ${productDetails.price} <br>
+            Precio: ${productDetails.price}
           </div>
         </div>
       `;

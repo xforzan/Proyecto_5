@@ -18,6 +18,9 @@ let localUsers = localStorage.getItem('users')
               {id: 3, quantity: 1},
               {id: 6, quantity: 1},
               {id: 7, quantity: 1},
+              {id: 8, quantity: 1},
+              {id: 9, quantity: 1},
+              
           ],
       },
       {
