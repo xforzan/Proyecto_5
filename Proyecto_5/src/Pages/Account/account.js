@@ -119,7 +119,6 @@ export const account = () => {
           <div class="productDetails">
             <strong>${productDetails.name}</strong>
             <span>Cantidad: ${productQuantity}</span>
-            Fecha de compra: ${product.date}<br>
             Precio: ${productDetails.price}
           </div>
         </div>
