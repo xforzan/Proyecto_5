@@ -1,33 +1,79 @@
-.account-container{
-    gap: 50px;
-    margin-top: 20px;
-    text-align: center;
+
+.account-container h1{
+  text-align: center;
 }
 
 .userDetails{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
 }
 
 .userDetails img{
-    margin-top: 60px;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: top;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  object-fit: cover;
+  object-position: top;
 }
 
-#logout{
-    padding: 10px;
-    border-radius: 30px;
-    background-color: black;
-    color: white;
-    text-align: center;
-    cursor: pointer;
-    border: none;
+.userDetails button{
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
 }
+
+.changeContent{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.changeContent div{
+  width: 70%;
+}
+
+
+
+
+#editForm{
+  display: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#editForm input{
+  width: 100%;
+    padding: 12px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+
+
+
+
+
+  .sectionContent {
+    display: none;
+  }
+  
+  #ordersSection {
+    display: none;
+  }
+  
