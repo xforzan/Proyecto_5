@@ -25,7 +25,7 @@ export const account = () => {
     </div>
     
     <section class="changeContent">
-      <div>
+      <div class="btns">
         <button type="button" class="changeBtn" id="ordersBtn">Pedidos</button>
         <button type="button" class="changeBtn" id="accountBtn">Detalles de la cuenta</button>
       </div>
@@ -76,7 +76,7 @@ export const account = () => {
           <label for="confirmNewPassword">Confirmar nueva contraseña:</label>
           <input type="password" id="confirmNewPassword" placeholder="Confirma tu nueva contraseña">
           
-          <button type="submit">Guardar cambios</button>
+          <button class="submitBtn" type="submit">Guardar cambios</button>
         </form>
       </div>
     </section>
