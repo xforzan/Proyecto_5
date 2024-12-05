@@ -5,7 +5,7 @@ export const footer = () => {
 const footer = document.querySelector('footer');
 footer.innerHTML = `
  <div class="sobre-nosotros">
-            <img src="./Assets/Logo/Logo-White.svg" alt="logo">
+            <img src="./ishop.png" alt="logo">
             <p>Somos una tienda online especializada en tecnología, con productos de alta calidad. Te ofrecemos una experiencia de compra única, con servicio al cliente excepcional y entregas rápidas. Explora nuestras ofertas y descubre las últimas novedades.</p>
         </div>
         <ul>

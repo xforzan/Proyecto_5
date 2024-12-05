@@ -6,7 +6,7 @@ localStorage.setItem('userStatus', JSON.stringify(localStatus));
 
 export let userStatus = localStatus;
 
-console.log("se ejecutó", localStatus);
+
 
 
 

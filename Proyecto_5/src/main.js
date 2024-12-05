@@ -1,7 +1,7 @@
 import './style.css'
 
 
-import { cart } from './Pages/Cart/cart';
+import { cartPage } from './Pages/Cart/cart';
 import { login } from './Pages/Login/login';
 import { account } from './Pages/Account/account';
 import { linkPage } from './Utils/linkPage';
@@ -16,8 +16,8 @@ navigationMobile();
 
 footer();
 
-linkPage('#cart', cart);
+linkPage('#cart', cartPage);
 linkPage("#logo", products);
 linkPage("#home", products);
-linkPage("#cartMobile", cart);
+linkPage("#cartMobile", cartPage);
 // linkPage("#account", account);

@@ -3,6 +3,7 @@ import { cleanPage } from '../../Utils/cleanPage';
 import { productsList } from '../../Data/productsList';
 import { checkout } from '../../Pages/Checkout/checkout';
 import { cart } from '../../Data/cart';
+import { toCheckout } from '../../Data/toCheckout';
 
 export const products = () => {
     cleanPage('main');
@@ -24,7 +25,9 @@ export const products = () => {
 
         const checkoutButton = productElement.querySelector(`#buy-button-${product.id}`);
         checkoutButton.addEventListener('click', () => {
-            checkout(product.id);  
+            toCheckout.length = 0;
+            toCheckout.push(product.id);
+            checkout(toCheckout);
         });
         
 
@@ -32,8 +35,6 @@ export const products = () => {
         addToCartButton.addEventListener('click', () => {
         
         const productQuantity = productsList.find(item => item.id === product.id).quantity;
-
-        console.log("Mi producto tiene la cantidad de",productQuantity);
 
         const cartItem = cart.find(item => item.id === product.id);
         if (cartItem) {
@@ -48,7 +49,6 @@ export const products = () => {
         }
     
     localStorage.setItem('cart', JSON.stringify(cart));
-    console.log(cart);
         });
     }
     
