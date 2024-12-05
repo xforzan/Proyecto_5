@@ -10,7 +10,7 @@ export const header = () => {
   const header = document.querySelector('header');
 
   header.innerHTML = `
-    <img src="https://i.ibb.co/7zvZwvL/logo.png" alt="logo" id="logo">
+    <img src="./ishop.png" alt="logo" id="logo">
       <div class="searchBar">
         <span></span>
         <input id="searchBar" type="text" name="Search bar" placeholder="Search">
