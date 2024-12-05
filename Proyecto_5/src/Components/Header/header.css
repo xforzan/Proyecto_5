@@ -95,4 +95,11 @@ header img{
     header{
         height: 30px;
     }
+    header img{
+        height: 30px;
+        width: 90px;
+    }
+    .searchBar{
+        width: 100%;
+    }
 }
