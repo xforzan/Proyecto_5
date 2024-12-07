@@ -36,7 +36,7 @@ export const cartPage = () => {
               <div class="productCartDetails">
                 <img class="cartImg" src="${product.image}" alt="${product.name}">
                 <div class="productInf">
-                  <strong>${product.name}</strong>
+                  <strong>${product.shortName}</strong>
                   <div class="cartQuantity">
                   <button class="decrement-btn">-</button>
                     ${quantity}
