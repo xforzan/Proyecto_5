@@ -35,6 +35,8 @@
 
 .cartImg{
     width: 10vw;
+    min-width: 80px;
+    min-height: 80px;
     height: 10vw;
     object-fit: cover;
     object-position: center;
