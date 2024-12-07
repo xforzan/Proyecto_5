@@ -86,3 +86,9 @@
     font-weight: bold;
     font-size: 20px;
 }
+
+.cartQuantity{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}

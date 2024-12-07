@@ -37,10 +37,11 @@ export const cartPage = () => {
                 <img class="cartImg" src="${product.image}" alt="${product.name}">
                 <div class="productInf">
                   <strong>${product.name}</strong>
-                  <span>Cantidad: 
-                    <button class="decrement-btn">-</button>
+                  <div class="cartQuantity">
+                  <button class="decrement-btn">-</button>
                     ${quantity}
                     <button class="increment-btn">+</button>
+                  </div>
                   </span>
                   Precio: ${product.price}€
                 </div>
