@@ -15,6 +15,7 @@ export const cartPage = () => {
         const emptyMessage = document.createElement('p');
         emptyMessage.textContent = 'El carrito está vacío';
         cartContainer.appendChild(emptyMessage);
+        localStorage.removeItem('cartCount');
     } else {
         let total = 0;
 
