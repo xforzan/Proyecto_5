@@ -4,9 +4,12 @@ import { productsList } from '../../Data/productsList';
 import { checkout } from '../../Pages/Checkout/checkout';
 import { cart } from '../../Data/cart';
 import { toCheckout } from '../../Data/toCheckout';
+import { header } from '../../Components/Header/header';
+
 
 export const products = () => {
     cleanPage('main');
+    
     const productsContainer = document.createElement('div');
     productsContainer.classList.add('products-container');
     

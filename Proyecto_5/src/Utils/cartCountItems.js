@@ -1,8 +1,6 @@
-
 import { cart } from '../Data/cart';
 
 export const cartCountItems = (cartCount, cartCountElement) => {
-
 
   const count = () => {
     let counter = 0;
@@ -17,12 +15,22 @@ export const cartCountItems = (cartCount, cartCountElement) => {
       cartCountElement.textContent = counter;
       localStorage.setItem('cartCount', counter);
     }
-    
   }
   
-  const addProductButton = document.querySelectorAll('.add');
-  addProductButton.forEach((button) => {
-    button.addEventListener('click', count);
+  const addEventListeners = () => {
+    const addProductButton = document.querySelectorAll('.add');
+    addProductButton.forEach((button) => {
+      button.addEventListener('click', count);
     });
-};
+  };
 
+
+  addEventListeners();
+
+
+  const addButtons = new MutationObserver(() => {
+    addEventListeners();
+  });
+
+  addButtons.observe(document.body, { childList: true, subtree: true });
+};
