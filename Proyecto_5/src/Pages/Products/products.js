@@ -4,7 +4,6 @@ import { productsList } from '../../Data/productsList';
 import { checkout } from '../../Pages/Checkout/checkout';
 import { cart } from '../../Data/cart';
 import { toCheckout } from '../../Data/toCheckout';
-import { header } from '../../Components/Header/header';
 
 
 export const products = () => {
@@ -35,26 +34,29 @@ export const products = () => {
         
 
         const addToCartButton = productElement.querySelector(`#add-to-cart-${product.id}`);
-        addToCartButton.addEventListener('click', () => {
-        
-        const productQuantity = productsList.find(item => item.id === product.id).quantity;
+addToCartButton.addEventListener('click', () => {
+    const productQuantity = productsList.find(item => item.id === product.id).quantity;
 
-        const cartItem = cart.find(item => item.id === product.id);
-        if (cartItem) {
-            if (cartItem.quantity >= productQuantity) {
-                alert('No hay suficiente stock');
-                return;
-            }
-            cartItem.quantity++;
-        } else {
-
-        cart.push({id: product.id, quantity: 1});
-        }
-    
-    localStorage.setItem('cart', JSON.stringify(cart));
-        });
+    if (productQuantity === 0) {
+        alert('No hay suficiente stock');
+        return;
     }
-    
-    const main = document.querySelector('main');
-    main.appendChild(productsContainer);
+
+    const cartItem = cart.find(item => item.id === product.id);
+    if (cartItem) {
+        if (cartItem.quantity >= productQuantity) {
+            alert('No hay suficiente stock');
+            return;
+        }
+        cartItem.quantity++;
+    } else {
+        cart.push({id: product.id, quantity: 1});
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+});
+
+const main = document.querySelector('main');
+main.appendChild(productsContainer);
+    }
 }

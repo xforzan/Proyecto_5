@@ -32,18 +32,20 @@ export const cartPage = () => {
             const productItem = document.createElement('li');
 
             productItem.innerHTML = ` 
-              <div class="productInfo">
-                <img src="${product.image}" alt="${product.name}">
-                <div class="productDetails">
+              <div class="productInformation">
+              <div class="productCartDetails">
+                <img class="cartImg" src="${product.image}" alt="${product.name}">
+                <div class="productInf">
                   <strong>${product.name}</strong>
                   <span>Cantidad: 
                     <button class="decrement-btn">-</button>
                     ${quantity}
                     <button class="increment-btn">+</button>
                   </span>
-                  Precio: ${product.price}
-                  <button class="remove-btn">Eliminar</button>
+                  Precio: ${product.price}€
                 </div>
+                </div>
+                <button class="remove-btn">X</button>
               </div>
             `;
 
@@ -86,9 +88,15 @@ export const cartPage = () => {
             cartContainer.appendChild(productItem);
         }
 
+        const summary = document.createElement('div');
         const totalElement = document.createElement('p');
-        totalElement.textContent = `Total: ${total}`;
-        cartContainer.appendChild(totalElement);
+        totalElement.textContent = `A pagar:`;
+        const totalAmount = document.createElement('span');
+        totalAmount.textContent = `${total}€`;
+        summary.classList.add('cartSummary');
+        summary.appendChild(totalElement);
+        summary.appendChild(totalAmount);
+        cartContainer.appendChild(summary);
 
         const checkoutButton = document.createElement('button');
         checkoutButton.textContent = 'Checkout';

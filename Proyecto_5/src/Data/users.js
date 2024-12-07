@@ -13,16 +13,7 @@ let localUsers = localStorage.getItem('users')
           email: 'juanperez@gmail.com',
           password: '1234',
           avatar: 'https://wallpapers.com/images/hd/soldier-boy-profile-picture-2g9ddl1byiw38lmh.jpg',
-          boughtProducts: [
-              {id: 1, quantity: 2},
-              {id: 3, quantity: 1},
-              {id: 4, quantity: 69},
-              {id: 6, quantity: 1},
-              {id: 7, quantity: 1},
-              {id: 8, quantity: 1},
-              {id: 9, quantity: 1},
-
-          ],
+          boughtProducts: [],
       },
       {
           id: 2,

@@ -58,7 +58,6 @@ export const checkout = (toCheckout) => {
     <section class="checkoutSummary">
        <h2>Resumen de compra</h2>
         <hr>
-        <!-- Aquí vamos a generar dinámicamente las secciones de cada producto -->
     </section>
     `;
 
