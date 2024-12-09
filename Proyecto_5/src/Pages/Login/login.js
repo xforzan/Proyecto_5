@@ -1,5 +1,7 @@
 import './login.css';
 import { cleanPage } from '../../Utils/cleanPage';
+import { users } from '../../Data/users';
+import { userStatus } from '../../Data/userStatus';
 
 export const login = () => {
     cleanPage('main');
@@ -9,72 +11,133 @@ export const login = () => {
     loginContainer.innerHTML = `
         <h1 id="form-title">Iniciar sesión</h1>
         <form id="auth-form">
-            <div class="step" id="step-1">
-                <label for="email">Correo electrónico:</label>
-                <input type="email" id="email" name="email" required>
-                <button type="button" id="next-1">Siguiente</button>
+
+            <div id="login-form">
+                <label for="login-email">Correo electrónico:</label>
+                <input type="email" id="login-email" name="email" required>
+                <label for="login-password">Contraseña:</label>
+                <input type="password" id="login-password" name="password" required>
+                <button type="submit" id="login-submit">Iniciar sesión</button>
             </div>
-            <div class="step" id="step-2" style="display: none;">
-                <label for="password">Contraseña:</label>
-                <input type="password" id="password" name="password" required>
-                <button type="button" id="prev-2">Anterior</button>
-                <button type="button" id="next-2">Siguiente</button>
-            </div>
-            <div class="step" id="step-3" style="display: none;">
-                <label for="confirm-password">Confirmar contraseña:</label>
-                <input type="password" id="confirm-password" name="confirm-password" required>
-                <button type="button" id="prev-3">Anterior</button>
-                <button type="submit" id="submit-button">Registrarse</button>
+
+
+            <div id="register-form" style="display: none;">
+                <label for="register-name">Nombre:</label>
+                <input type="text" id="register-name" name="name" required>
+                <label for="register-surname">Apellido:</label>
+                <input type="text" id="register-surname" name="surname" required>
+                <label for="register-address">Dirección:</label>
+                <input type="text" id="register-address" name="address" required>
+                <label for="register-postalCode">Código postal:</label>
+                <input type="text" id="register-postalCode" name="postalCode" required>
+                <label for="register-email">Correo electrónico:</label>
+                <input type="email" id="register-email" name="email" required>
+                <label for="register-password">Contraseña:</label>
+                <input type="password" id="register-password" name="password" required>
+                <label for="register-avatar">Avatar (opcional):</label>
+                <input type="text" id="register-avatar" name="avatar" placeholder="URL de la imagen (opcional)">
+                <button type="submit" id="register-submit">Registrarse</button>
             </div>
         </form>
-        <button id="toggle-button">¿Ya tienes una cuenta? Inicia sesión</button>
+        <button id="toggle-button">¿No tienes cuenta? Regístrate</button>
     `;
 
-    const main = document.querySelector('main');
-    main.appendChild(loginContainer);
 
-    const formTitle = document.getElementById('form-title');
-    const authForm = document.getElementById('auth-form');
-    const toggleButton = document.getElementById('toggle-button');
+    document.querySelector('main').appendChild(loginContainer);
 
-    const steps = document.querySelectorAll('.step');
-    let currentStep = 0;
 
-    const showStep = (stepIndex) => {
-        steps.forEach((step, index) => {
-            step.style.display = index === stepIndex ? 'block' : 'none';
-        });
-    };
-
-    document.getElementById('next-1').addEventListener('click', () => {
-        currentStep = 1;
-        showStep(currentStep);
-    });
-
-    document.getElementById('prev-2').addEventListener('click', () => {
-        currentStep = 0;
-        showStep(currentStep);
-    });
-
-    document.getElementById('next-2').addEventListener('click', () => {
-        currentStep = 2;
-        showStep(currentStep);
-    });
-
-    document.getElementById('prev-3').addEventListener('click', () => {
-        currentStep = 1;
-        showStep(currentStep);
-    });
+    const toggleButton = document.querySelector('#toggle-button');
+    const loginForm = document.querySelector('#login-form');
+    const registerForm = document.querySelector('#register-form');
 
     toggleButton.addEventListener('click', () => {
-        if (formTitle.innerText === 'Iniciar sesión') {
-            formTitle.innerText = 'Registrarse';
-            document.getElementById('submit-button').innerText = 'Registrarse';
-            showStep(0);
+
+        if (loginForm.style.display === 'none') {
+            loginForm.style.display = 'block';
+            registerForm.style.display = 'none';
         } else {
-            formTitle.innerText = 'Iniciar sesión';
-            document.getElementById('submit-button').innerText = 'Iniciar sesión';
-            showStep(0);
+            loginForm.style.display = 'none';
+            registerForm.style.display = 'block';
+        }
+
+
+        if (toggleButton.textContent === '¿No tienes cuenta? Regístrate') {
+            toggleButton.textContent = '¿Ya tienes una cuenta? Inicia sesión';
+        } else {
+            toggleButton.textContent = '¿No tienes cuenta? Regístrate';
+        }
+    });
+
+
+    const registerSubmitButton = document.querySelector('#register-submit');
+
+    registerSubmitButton.addEventListener('click', (b) => {
+        b.preventDefault();
+
+
+        const name = document.getElementById('register-name').value;
+        const surname = document.getElementById('register-surname').value;
+        const address = document.getElementById('register-address').value;
+        const postalCode = document.getElementById('register-postalCode').value;
+        const email = document.getElementById('register-email').value;
+        const password = document.getElementById('register-password').value;
+        const avatar = document.getElementById('register-avatar').value || './account.png';  // Avatar opcional
+
+
+        if (!name || !surname || !address || !postalCode || !email || !password) {
+            alert('Por favor, completa todos los campos.');
+            return;
+        }
+
+
+        const highestId = Math.max(...users.map(user => user.id), 0) + 1;
+
+
+        const newUser = {
+            id: highestId,
+            name: name,
+            surname: surname,
+            country: '',
+            city: '',
+            province: '',
+            address: address,
+            postalCode: postalCode,
+            email: email,
+            password: password,
+            avatar: avatar,
+            boughtProducts: []
+        };
+
+
+        users.push(newUser);
+        localStorage.setItem('users', JSON.stringify(users));
+
+        userStatus.id = highestId;
+        userStatus.logged = true;
+        localStorage.setItem('userStatus', JSON.stringify(userStatus));
+
+        alert('Usuario registrado con éxito');
+        location.reload();
+    });
+
+
+    const loginSubmitButton = document.querySelector('#login-submit');
+    loginSubmitButton.addEventListener('click', (b) => {
+        b.preventDefault();
+
+        const email = document.getElementById('login-email').value;
+        const password = document.getElementById('login-password').value;
+
+        const user = users.find(u => u.email === email && u.password === password);
+
+        if (user) {
+            userStatus.id = user.id;
+            userStatus.logged = true;
+            localStorage.setItem('userStatus', JSON.stringify(userStatus));
+            alert('Inicio de sesión exitoso');
+            location.reload();
+        } else {
+            alert('Correo electrónico o contraseña incorrectos');
         }
     });
 };
