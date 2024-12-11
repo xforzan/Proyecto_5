@@ -18,16 +18,20 @@ export const products = () => {
 
     productsFilters.innerHTML = `
         <nav>
-          <select name="color" id="color">
-          <option value="color">color</option>
+          <select name="almacenamiento" id="almacenamiento">
+          <option value="default">almacenamiento</option>
           </select>
           
-          <select name="orientation" id="orientation">
-          <option value="orientation">orientation</option>
+          <select name="marca" id="marca">
+          <option value="default">marca</option>
           </select>
 
-          <select name="order by" id="orderBy">
-          <option value="orderBy">order by</option>
+          <select name="ordenar por" id="ordenarPor">
+          <option value="default">ordenar por</option>
+          </select>
+
+          <select name="color" id="color">
+          <option value="default">color</option>
           </select>
         </nav>`;
     for (const product of productsList) {
