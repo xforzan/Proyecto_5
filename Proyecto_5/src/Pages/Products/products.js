@@ -18,8 +18,8 @@ export const products = () => {
 
     productsFilters.innerHTML = `
         <nav>
-          <select name="almacenamiento" id="almacenamiento">
-          <option value="default">almacenamiento</option>
+          <select name="capacidad" id="capacidad">
+          <option value="default">capacidad</option>
           </select>
           
           <select name="marca" id="marca">
