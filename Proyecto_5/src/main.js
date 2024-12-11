@@ -9,6 +9,8 @@ import { header } from './Components/Header/header';
 import { products } from './Pages/Products/products';
 import { footer } from './Components/Footer/footer';
 import { navigationMobile } from './Components/NavigationMobile/navigationMobile';
+import { searchListener } from './Utils/searchListener';
+
 
 products();
 header();
@@ -21,3 +23,5 @@ linkPage("#logo", products);
 linkPage("#home", products);
 linkPage("#cartMobile", cartPage);
 // linkPage("#account", account);
+
+searchListener()
