@@ -95,8 +95,8 @@ header img{
     .headerNav{
         display: none;
     }
-    header{
-        /* height: 30px; */
+    .headerContainer{
+        height: 30px;
     }
     header img{
         height: 30px;
