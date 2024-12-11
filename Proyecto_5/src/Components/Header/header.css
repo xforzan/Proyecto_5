@@ -1,9 +1,8 @@
 header{
-
     position: sticky;
     top: 0;
     z-index: 1;
-    height: 60px;
+
 }
 
 header img{
@@ -97,7 +96,7 @@ header img{
         display: none;
     }
     header{
-        height: 30px;
+        /* height: 30px; */
     }
     header img{
         height: 30px;
@@ -125,6 +124,7 @@ header img{
     background-color: white;
     padding: 0px;
     height: 60px;
+    
 }
 
   
