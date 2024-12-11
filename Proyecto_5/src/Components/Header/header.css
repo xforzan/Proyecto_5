@@ -1,23 +1,20 @@
 header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    background-color: black;
     position: sticky;
     top: 0;
     z-index: 1;
-
+    gap: 20px;
+    height: 80px;
 }
 
 header img{
     height: 40px;
 }
 
-.headerContainer{
-    height: 80px;
-    padding: 30px;
-    background-color: black;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-}
 
 .headerNav ul {
     display: flex;
@@ -95,7 +92,7 @@ header img{
     .headerNav{
         display: none;
     }
-    .headerContainer{
+    header{
         height: 30px;
     }
     header img{
@@ -108,58 +105,4 @@ header img{
         padding: 5px;
         padding-left: 10px;
     }
-}
-
-
-
-
-
-
-.filters-hidden{
-    display: none;
-}
-  
-.filters {
-    width: 100%;
-    background-color: white;
-    padding: 0px;
-    height: 60px;
-    
-}
-
-  
-
-.filters > nav{
-    display: flex;
-    gap: 20px;
-    overflow-x: scroll;
-    padding: 10px;
-}
-
-.filters > nav::-webkit-scrollbar{
-    width: 0;
-}
-
-.filters > nav > select{
-    border-radius: 30px;
-    background-color: white;
-    width: 120px;
-    min-width: 130px;
-    height: 40px;
-    font-size: 20px;
-    text-align: center;
-    overflow-x: scroll;
-    border: none;
-    box-shadow: 0px 0px 10px #dedede
-}
-
-
-.filters > nav > select:focus{
-    border: 0;
-    outline: none;
-}
-
-.filters > nav > select:hover{
-    overflow: none;
-    overflow-y: scroll;
 }

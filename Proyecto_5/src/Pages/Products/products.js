@@ -11,7 +11,25 @@ export const products = () => {
     
     const productsContainer = document.createElement('div');
     productsContainer.classList.add('products-container');
+
+    const productsFilters = document.createElement('section');
+    productsFilters.classList.add('filters');
     
+
+    productsFilters.innerHTML = `
+        <nav>
+          <select name="color" id="color">
+          <option value="color">color</option>
+          </select>
+          
+          <select name="orientation" id="orientation">
+          <option value="orientation">orientation</option>
+          </select>
+
+          <select name="order by" id="orderBy">
+          <option value="orderBy">order by</option>
+          </select>
+        </nav>`;
     for (const product of productsList) {
         const productElement = document.createElement('div');
         productElement.classList.add('product');
@@ -57,6 +75,7 @@ addToCartButton.addEventListener('click', () => {
 });
 
 const main = document.querySelector('main');
+main.appendChild(productsFilters);
 main.appendChild(productsContainer);
     }
 }

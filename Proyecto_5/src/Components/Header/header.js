@@ -10,7 +10,6 @@ export const header = () => {
   const header = document.querySelector('header');
 
   header.innerHTML = `
-  <div class="headerContainer">
     <img src="./ishop.png" alt="logo" id="logo">
       <div class="searchBar">
         <span></span>
@@ -29,22 +28,6 @@ export const header = () => {
                 </li>
         </ul>
     </nav>
-  </div>
-    <section class="filters" id="filters">
-        <nav>
-          <select name="color" id="color">
-          <option value="color">color</option>
-          </select>
-          
-          <select name="orientation" id="orientation">
-          <option value="orientation">orientation</option>
-          </select>
-
-          <select name="order by" id="orderBy">
-          <option value="orderBy">order by</option>
-          </select>
-        </nav>
-      </section>
   `;
 
 
