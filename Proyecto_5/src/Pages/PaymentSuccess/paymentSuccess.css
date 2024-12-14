@@ -3,6 +3,7 @@
     display: flex;
     padding: 50px;
     gap: 20px;
+    margin-bottom: 50px;
 }
 
 .payment-success {
@@ -84,7 +85,6 @@
     .payment-container{
         flex-wrap: wrap;
         gap: 80px;
-        padding: 10px;
     }
     .payment-success, .thanks{
         width: 100%;
@@ -104,5 +104,11 @@
     }
     .payment-success h2 {
         font-size: 2rem;
+    }
+    .payment-success{
+        box-shadow: none;
+    }
+    .payment-container{
+        padding: 10px;
     }
 }
