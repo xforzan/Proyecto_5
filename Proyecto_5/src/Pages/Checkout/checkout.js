@@ -172,6 +172,6 @@ export const checkout = (toCheckout) => {
 
         const total = parseFloat(document.getElementById('total').textContent);
         alert('Compra finalizada con éxito.');
-        paymentSuccess(total);
+        paymentSuccess(total, name);
     });
 };

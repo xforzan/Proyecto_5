@@ -4,6 +4,7 @@ import { productsList } from '../../Data/productsList';
 import { checkout } from '../../Pages/Checkout/checkout';
 import { cart } from '../../Data/cart';
 import { toCheckout } from '../../Data/toCheckout';
+import { filtersListener } from '../../Utils/filtersListener';
 
 
 export const products = () => {
@@ -82,4 +83,6 @@ const main = document.querySelector('main');
 main.appendChild(productsFilters);
 main.appendChild(productsContainer);
     }
+    filtersListener();
 }
+
