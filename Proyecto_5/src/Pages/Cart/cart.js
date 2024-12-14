@@ -38,9 +38,9 @@ export const cartPage = () => {
                 <div class="productInf">
                   <strong>${product.shortName}</strong>
                   <div class="cartQuantity">
-                  <button class="decrement-btn">-</button>
+                  <button class="decrement-btn add">-</button>
                     ${quantity}
-                    <button class="increment-btn">+</button>
+                    <button class="increment-btn add">+</button>
                   </div>
                   </span>
                   Precio: ${product.price}€

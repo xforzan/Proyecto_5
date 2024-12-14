@@ -41,7 +41,7 @@ export const products = () => {
         productElement.innerHTML = `
             <img src="${product.image}" alt="${product.name}" class="product-image">
             <h3 class="product-name">${product.name}</h3>
-            <p class="product-price">$${product.price}</p>
+            <p class="product-price">${product.price}€</p>
             <button class="productButton" id="buy-button-${product.id}">Comprar</button>
             <button class="productButton add" id="add-to-cart-${product.id}">Agregar al carrito</button>
         `;
