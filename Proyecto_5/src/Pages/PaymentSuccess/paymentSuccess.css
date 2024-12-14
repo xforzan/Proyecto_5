@@ -84,6 +84,7 @@
     .payment-container{
         flex-wrap: wrap;
         gap: 80px;
+        padding: 10px;
     }
     .payment-success, .thanks{
         width: 100%;
