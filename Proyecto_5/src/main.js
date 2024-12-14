@@ -10,6 +10,7 @@ import { products } from './Pages/Products/products';
 import { footer } from './Components/Footer/footer';
 import { navigationMobile } from './Components/NavigationMobile/navigationMobile';
 import { searchListener } from './Utils/searchListener';
+import { changeTheme } from './Utils/changeTheme';
 
 
 products();
@@ -25,3 +26,4 @@ linkPage("#cartMobile", cartPage);
 // linkPage("#account", account);
 
 searchListener()
+changeTheme()

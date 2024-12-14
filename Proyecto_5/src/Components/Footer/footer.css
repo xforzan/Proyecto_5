@@ -12,7 +12,7 @@ footer{
     gap: 20px;
     border-top: 1px solid var(--grey);
     color: rgb(0, 0, 0);
-    background-color: rgb(201, 201, 201);
+    background-color: white;
 }
 
 footer ul{
@@ -50,10 +50,11 @@ footer a{
 
 }
 
-.sobre-nosotros img{
+#footerLogo{
     width: 50%;
     max-width: 250px;
     min-width: 100px;
+    height: 40px;
 }
 
 .sobre-nosotros p{

@@ -13,7 +13,7 @@ export const navigationMobile = () => {
     nav.innerHTML = `
             <ul>
                 <li id="home"><a href="#home"></a></li>
-                <li><a href="#about">About</a></li>
+                <li><button class="changeTheme" id="lightTheme"><span></span></button></li>
                 <li id="cartMobile" class="cartIcon-container">
                     <img src="./shopping-bag.svg" alt"shopping bag" class="shoppingBag">
                     <span id="cart-count2"></span>
