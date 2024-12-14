@@ -46,7 +46,7 @@ export const cartPage = () => {
                   Precio: ${product.price}€
                 </div>
                 </div>
-                <button class="remove-btn">X</button>
+                <button class="remove-btn add">X</button>
               </div>
             `;
 
