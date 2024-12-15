@@ -19,6 +19,11 @@ export const searchListener = () => {
         );
 
 
+
+        if (filteredProducts.length === 0) {
+            notFound(searchBar.value);
+        }
+        else {
         hiddenProducts.length = 0;
         hiddenProducts.push(...productsList);
         productsList.length = 0;
@@ -33,12 +38,8 @@ export const searchListener = () => {
         productsList.length = 0;
         productsList.push(...hiddenProducts);
         hiddenProducts.length = 0;
-
-
-        if (filteredProducts.length === 0) {
-            notFound(searchBar.value);
-            console.log("papasito")
-        }
+    }
+        
 
         }
 
