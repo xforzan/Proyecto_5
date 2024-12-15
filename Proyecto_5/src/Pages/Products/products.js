@@ -51,6 +51,10 @@ export const products = () => {
 
         const checkoutButton = productElement.querySelector(`#buy-button-${product.id}`);
         checkoutButton.addEventListener('click', () => {
+            if (product.quantity === 0) {
+                alert('error','¡Ups!', 'No hay stock de este producto');
+                return;
+            }
             toCheckout.length = 0;
             toCheckout.push(product.id);
             checkout(toCheckout);
