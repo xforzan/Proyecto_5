@@ -153,9 +153,36 @@ export const checkout = (toCheckout) => {
             document.getElementById('subtotal').textContent = total;
             document.getElementById('discount').textContent = discount;
             document.getElementById('total').textContent = totalWithDiscount;
-            alert(`Cupón aplicado: ${discount} de descuento`);
+            const Toast = Swal.mixin({
+                toast: true,
+                position: "top-end",
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                  toast.onmouseenter = Swal.stopTimer;
+                  toast.onmouseleave = Swal.resumeTimer;
+                }
+              });
+              
+              Toast.fire({
+                icon: "success",
+                title: "Cupon aplicado correctamente",
+                customClass: {
+                  popup: 'css-swal',
+                }
+              });
+
         } else {
-            alert('Cupón no válido');
+            Swal.fire({
+                title: '¡Cupón no válido!',
+                text: 'Prueba con otro cupón',
+                icon: 'error',
+                confirmButtonText: 'Cerrar',
+                customClass: {
+                    popup: 'css-swal',
+                  }
+              })
         }
     });
 

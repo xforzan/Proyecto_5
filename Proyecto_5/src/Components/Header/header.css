@@ -1,10 +1,9 @@
 header{
-    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 30px;
-    background-color: white;
+    background-color: black;
     position: sticky;
     top: 0;
     z-index: 1;
@@ -49,7 +48,7 @@ header img{
 .searchBar{
     display: flex;
     gap: 5px;
-    width: 100%;
+    width: fit-content;
     border-radius: 30px;
     background-color: #f1f1f1;
     padding: 10px;
@@ -106,46 +105,4 @@ header img{
         padding: 5px;
         padding-left: 10px;
     }
-}
-
-.changeTheme::before{
-    cursor: pointer;
-}
-
-#darkTheme, #lightTheme{
-    background-color: transparent;
-    border: none;
-
-}
-
-
-
-#darkTheme span::before{
-    content: url("/sun.svg");
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-}
-
-#lightTheme span::before{
-    content: "🌙";
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-}
-
-.logo {
-    color: black;
-    height: 60px;
-    width: 370px;
-    object-fit: cover;
-}
-
-.headerDark{
-    background-color: black;
-    color: white;
-}
-
-.logoDark{
-    color: white;
 }

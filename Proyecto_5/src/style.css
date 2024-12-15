@@ -10,10 +10,6 @@ body{
   
 }
 
-.dark{
-  background-color: #1e1e1e;
-  transition: 0.5s;
-}
 
 main{
   min-height: 100vh;
