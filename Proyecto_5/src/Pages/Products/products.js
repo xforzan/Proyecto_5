@@ -37,14 +37,22 @@ export const products = () => {
           </select>
         </nav>`;
     for (const product of productsList) {
-        const productElement = document.createElement('div');
+        const productElement = document.createElement('article');
         productElement.classList.add('product');
         productElement.innerHTML = `
+        <section class="productPreview">
             <img src="${product.image}" alt="${product.name}" class="product-image">
             <h3 class="product-name">${product.name}</h3>
+            </section>
+            <section class="product-info">
             <p class="product-price">${product.price}€</p>
+            <div class="rating">
+            <p class="stars">${product.stars}</p>
+            <p class="reviews">${product.reviews}</p>
+            </div>
             <button class="productButton" id="buy-button-${product.id}">Comprar</button>
             <button class="productButton add" id="add-to-cart-${product.id}">Agregar al carrito</button>
+            </section>
         `;
         productsContainer.appendChild(productElement);
         

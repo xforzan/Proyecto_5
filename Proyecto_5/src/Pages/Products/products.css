@@ -10,7 +10,7 @@
 
 .product {
     display: flex;
-    /* justify-content: space-between; */
+    justify-content: space-between;
     flex-direction: column;
     background-color: white;
     border-radius: 30px;
@@ -36,7 +36,11 @@
 
 
 
-
+.product-image {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+}
 
 
 
@@ -91,6 +95,30 @@
     overflow: none;
     overflow-y: scroll;
 }
+
+
+.rating{
+    display: flex;
+    gap: 5px;
+    justify-content: space-between;
+}
+
+.stars{
+    font-weight: bold;
+    display: flex;
+    align-items: start;
+}
+.stars::after{
+    content: url(/star.svg);
+
+}
+
+.reviews::after{
+    content: "Opiniones";
+    margin-left: 5px;
+}
+
+
 
 @media (max-width: 675px){
     .filters{
