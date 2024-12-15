@@ -5,9 +5,11 @@ import { productsList } from '../../Data/productsList';
 import { checkout } from '../../Pages/Checkout/checkout';
 import { toCheckout } from '../../Data/toCheckout';
 import { alert } from '../../Utils/alert';
+import { scrollToTop } from '../../Utils/scrollToTop';
 
 export const cartPage = () => {
     cleanPage('main');
+    scrollToTop();
 
     const cartContainer = document.createElement('div');
     cartContainer.classList.add('cart-container');
