@@ -2,9 +2,12 @@ import './login.css';
 import { cleanPage } from '../../Utils/cleanPage';
 import { users } from '../../Data/users';
 import { userStatus } from '../../Data/userStatus';
+import { scrollToTop } from '../../Utils/scrollToTop';
+import { alert } from '../../Utils/alert';
 
 export const login = () => {
     cleanPage('main');
+    scrollToTop();
 
     const loginContainer = document.createElement('div');
     loginContainer.classList.add('login-container');
@@ -85,7 +88,7 @@ export const login = () => {
 
 
         if (!name || !surname || !address || !postalCode || !email || !password) {
-            alert('Por favor, completa todos los campos.');
+            alert('error', '¡Ups!', 'Por favor, completa todos los campos.');
             return;
         }
 
@@ -116,7 +119,7 @@ export const login = () => {
         userStatus.logged = true;
         localStorage.setItem('userStatus', JSON.stringify(userStatus));
 
-        alert('Usuario registrado con éxito');
+        alert('success', 'Usuario registrado con éxito', undefined);
         location.reload();
     });
 
@@ -134,10 +137,10 @@ export const login = () => {
             userStatus.id = user.id;
             userStatus.logged = true;
             localStorage.setItem('userStatus', JSON.stringify(userStatus));
-            alert('Inicio de sesión exitoso');
+            alert('success', 'Inicio de sesión exitoso', undefined);
             location.reload();
         } else {
-            alert('Correo electrónico o contraseña incorrectos');
+            alert('error', 'Correo electrónico o contraseña incorrectos', 'Por favor, inténtalo de nuevo');
         }
     });
 };
