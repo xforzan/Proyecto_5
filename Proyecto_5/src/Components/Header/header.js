@@ -11,15 +11,19 @@ export const header = () => {
 
   header.innerHTML = `
     <img src="/logo.svg" alt="logo" id="logo">
+    <nav class="links">
+    <ul>
+    <li><a href="#">Contacto</a></li>
+    <li><a href="#">Sobre Nosotros</a></li>
+    </ul>
+    </nav>
       <div class="searchBar">
         <span></span>
-        <input id="searchBar" type="text" name="Search bar" placeholder="Search">
+        <input id="searchBar" type="text" name="Search bar" placeholder="Introduce tu búsqueda...">
         </div>
     <nav class="headerNav">
   
         <ul>
-            <li><a href="#">Productos</a></li>
-            <li><button class="changeTheme" id="lightTheme"><span></span></button></li>
             <li id="cart" class="cartIcon-container">
                     <img src="./shopping-bag.svg" alt"shopping bag">
                     <span id="cart-count"></span>
