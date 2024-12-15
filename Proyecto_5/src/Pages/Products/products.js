@@ -5,6 +5,7 @@ import { checkout } from '../../Pages/Checkout/checkout';
 import { cart } from '../../Data/cart';
 import { toCheckout } from '../../Data/toCheckout';
 import { filtersListener } from '../../Utils/filtersListener';
+import { alert } from '../../Utils/alert';
 
 
 export const products = () => {
@@ -61,14 +62,14 @@ addToCartButton.addEventListener('click', () => {
     const productQuantity = productsList.find(item => item.id === product.id).quantity;
 
     if (productQuantity === 0) {
-        alert('No hay suficiente stock');
+        alert('error','¡Ups!', 'No hay stock de este producto');
         return;
     }
 
     const cartItem = cart.find(item => item.id === product.id);
     if (cartItem) {
         if (cartItem.quantity >= productQuantity) {
-            alert('No hay suficiente stock');
+              alert('error','¡Ups!', 'No hay stock de este producto');
             return;
         }
         cartItem.quantity++;

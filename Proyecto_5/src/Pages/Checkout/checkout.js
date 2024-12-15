@@ -5,6 +5,7 @@ import { productsList } from '../../Data/productsList';
 import { coupons } from '../../Data/coupons';
 import { scrollToTop } from '../../Utils/scrollToTop';
 import { paymentSuccess } from '../PaymentSuccess/paymentSuccess';
+import { alert } from '../../Utils/alert';
 
 export const checkout = (toCheckout) => {
     cleanPage('main');
@@ -153,36 +154,10 @@ export const checkout = (toCheckout) => {
             document.getElementById('subtotal').textContent = total;
             document.getElementById('discount').textContent = discount;
             document.getElementById('total').textContent = totalWithDiscount;
-            const Toast = Swal.mixin({
-                toast: true,
-                position: "top-end",
-                showConfirmButton: false,
-                timer: 3000,
-                timerProgressBar: true,
-                didOpen: (toast) => {
-                  toast.onmouseenter = Swal.stopTimer;
-                  toast.onmouseleave = Swal.resumeTimer;
-                }
-              });
-              
-              Toast.fire({
-                icon: "success",
-                title: "Cupon aplicado correctamente",
-                customClass: {
-                  popup: 'css-swal',
-                }
-              });
+            alert('success','Cupón aplicado correctamente', undefined); 
 
         } else {
-            Swal.fire({
-                title: '¡Cupón no válido!',
-                text: 'Prueba con otro cupón',
-                icon: 'error',
-                confirmButtonText: 'Cerrar',
-                customClass: {
-                    popup: 'css-swal',
-                  }
-              })
+              alert('error','Cupón no válido', 'Prueba con otro cupón');
         }
     });
 
@@ -193,12 +168,19 @@ export const checkout = (toCheckout) => {
         const phone = document.getElementById('phone').value;
 
         if (!name || !email || !address || !phone) {
-            alert('Por favor, complete todos los campos.');
+            Swal.fire({
+                title: '¡Faltan campos por rellenar!',
+                text: 'Por favor, rellena todos los campos',
+                icon: 'error',
+                confirmButtonText: 'Cerrar',
+                customClass: {
+                    popup: 'css-swal',
+                  }
+              })
             return;
         }
 
         const total = parseFloat(document.getElementById('total').textContent);
-        alert('Compra finalizada con éxito.');
         paymentSuccess(total, name);
     });
 };

@@ -4,6 +4,7 @@ import { cart } from '../../Data/cart';
 import { productsList } from '../../Data/productsList';
 import { checkout } from '../../Pages/Checkout/checkout';
 import { toCheckout } from '../../Data/toCheckout';
+import { alert } from '../../Utils/alert';
 
 export const cartPage = () => {
     cleanPage('main');
@@ -60,7 +61,7 @@ export const cartPage = () => {
                     localStorage.setItem('cart', JSON.stringify(cart));
                     cartPage();
                 } else {
-                    alert('No hay suficiente stock disponible');
+                    alert('error', '¡Ups!', 'No hay stock de este producto');
                 }
             });
 
@@ -103,7 +104,6 @@ export const cartPage = () => {
         checkoutButton.textContent = 'Checkout';
         checkoutButton.classList.add('checkout-btn');
         checkoutButton.addEventListener('click', () => {
-            alert('Yendo a hacer el pago');
             toCheckout.length = 0;
             cart.forEach(item => {
                 for (let i = 0; i < item.quantity; i++) {

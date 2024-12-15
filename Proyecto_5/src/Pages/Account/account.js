@@ -5,6 +5,7 @@ import { userStatus } from '../../Data/userStatus';
 import { users } from '../../Data/users';
 import { logOut } from '../../Utils/logOut';
 import { productsList } from '../../Data/productsList';
+import { alert } from '../../Utils/alert';
 
 export const account = () => {
   cleanPage('main');
@@ -202,19 +203,19 @@ window.rightClick = () => {
 
 
     if (currentPassword !== user.password) {
-      alert('La contraseña actual es incorrecta');
+      alert('error', '¡Ups!', 'La contraseña actual es incorrecta');
       return;
     }
 
 
     if (newPassword !== confirmNewPassword) {
-      alert('Las nuevas contraseñas no coinciden');
+      alert('error', '¡Ups!', 'Las nuevas contraseñas no coinciden');
       return;
     }
 
 
     if (newPassword.trim() === '') {
-      alert('La nueva contraseña no puede estar vacía');
+      alert('error', '¡Ups!', 'La nueva contraseña no puede estar vacía');
       return;
     }
 
@@ -229,7 +230,7 @@ window.rightClick = () => {
     const newEmail = document.getElementById('email').value;
 
     if (newName === '' || newEmail === '' || newAvatar === '' || newSurname === '' || newCountry === '' || newCity === '' || newProvince === '' || newPostalCode === '' || newAddress === '') {
-      alert('Por favor, rellena todos los campos');
+      alert('error', '¡Ups!', 'Por favor, rellena todos los campos');
       return;
     }
 
@@ -251,6 +252,7 @@ window.rightClick = () => {
 
     window.location.reload();
     alert('Datos guardados correctamente');
+    alert('success', '¡Datos guardados correctamente!', undefined);
   });
 
 
