@@ -12,7 +12,7 @@ export const searchListener = () => {
 
 
     searchBar.addEventListener("keydown", (event) => {
-        if (event.key === "Enter") {
+        if (event.code === "Enter") {
             const searchValue = searchBar.value.toLowerCase();
         const filteredProducts = productsList.filter(product => 
             product.name.toLowerCase().includes(searchValue)
