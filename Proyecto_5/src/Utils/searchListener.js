@@ -12,12 +12,11 @@ export const searchListener = () => {
 
 
     searchBar.addEventListener("keydown", (event) => {
-        if (event.keyCode === 13) {
+        if (event.key === "Enter") {
             const searchValue = searchBar.value.toLowerCase();
         const filteredProducts = productsList.filter(product => 
             product.name.toLowerCase().includes(searchValue)
         );
-
 
 
         if (filteredProducts.length === 0) {
@@ -48,6 +47,10 @@ export const searchListener = () => {
         
     });
 
-    
+    window.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+            alert("prueba");
+        }
+    });
 };
 
