@@ -8,8 +8,7 @@ export const searchListener = () => {
 
     searchBar.addEventListener("keydown", (event) => {
 
-        if (event.keyCode === 13) {
-            event.preventDefault();
+        if (event.key === 'Enter') {
             const searchValue = searchBar.value.toLowerCase();
 
 
