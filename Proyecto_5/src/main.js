@@ -11,6 +11,8 @@ import { footer } from './Components/Footer/footer';
 import { navigationMobile } from './Components/NavigationMobile/navigationMobile';
 import { searchListener } from './Utils/searchListener';
 import { changeTheme } from './Utils/changeTheme';
+import { contact } from './Pages/Contact/contact';
+import { aboutUs } from './Pages/AboutUs/aboutUs';
 
 
 products();
@@ -23,7 +25,8 @@ linkPage('#cart', cartPage);
 linkPage("#logo", products);
 linkPage("#home", products);
 linkPage("#cartMobile", cartPage);
-// linkPage("#account", account);
+linkPage("#contact", contact);
+linkPage("#aboutUs", aboutUs);
 
 searchListener()
 changeTheme()

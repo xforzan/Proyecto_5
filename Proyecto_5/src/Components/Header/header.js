@@ -13,8 +13,8 @@ export const header = () => {
     <img src="/logo.svg" alt="logo" id="logo">
     <nav class="links">
     <ul>
-    <li><a href="#">Contacto</a></li>
-    <li><a href="#">Sobre Nosotros</a></li>
+    <li id="contact"><a href="#">Contacto</a></li>
+    <li id="aboutUs"><a href="#">Sobre Nosotros</a></li>
     </ul>
     </nav>
       <div class="searchBar">
