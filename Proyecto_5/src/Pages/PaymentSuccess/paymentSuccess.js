@@ -8,8 +8,8 @@ import { cart } from '../../Data/cart';
 import { productsList } from '../../Data/productsList';
 import { products } from '../Products/products';
 
-export const paymentSuccess = (total,name) => {
-    console.log("success",total);
+export const paymentSuccess = (total,name, toCheckout) => {
+    console.log(name,total);
     cleanPage('main');
     scrollToTop();
 
@@ -63,13 +63,28 @@ export const paymentSuccess = (total,name) => {
 
 
     if (userStatus.logged === true){
+
+        const productCount = [];
+
+        toCheckout.forEach(productId => {
+            const existingProduct = productCount.find(item => item.productId === productId);
+            
+            if (existingProduct) {
+                existingProduct.quantity += 1;
+            } else {
+                productCount.push({ productId: productId, quantity: 1 });
+            }
+        });
+
+
+
         const user = users.find(u => u.id === userStatus.id);
-        cart.forEach(product => {
-            if (user.boughtProducts.find(p => p.id === product.id)) {
-                const boughtProduct = user.boughtProducts.find(p => p.id === product.id);
+        productCount.forEach(product => {
+            if (user.boughtProducts.find(p => p.id === product.productId)) {
+                const boughtProduct = user.boughtProducts.find(p => p.id === product.productId);
                 boughtProduct.quantity += product.quantity;
             } else {
-                user.boughtProducts.push({id: product.id, quantity: product.quantity});
+                user.boughtProducts.push({id: product.productId, quantity: product.quantity});
             }
 
             localStorage.setItem('users', JSON.stringify(users));

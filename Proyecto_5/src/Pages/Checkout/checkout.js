@@ -11,7 +11,6 @@ export const checkout = (toCheckout) => {
     cleanPage('main');
     scrollToTop();
 
-
     const productCount = [];
 
 
@@ -181,6 +180,6 @@ export const checkout = (toCheckout) => {
         }
 
         const total = parseFloat(document.getElementById('total').textContent);
-        paymentSuccess(total, name);
+        paymentSuccess(total, name, toCheckout);
     });
 };
