@@ -27,12 +27,15 @@ export const alert = (type,title,text) => {
 
     else if (type === 'error') {
     Swal.fire({
-        title: title,
-        text: text,
-        icon: 'error',
+      html: `
+                <dotlottie-player class="cross" src="https://lottie.host/00c6b930-08f1-4e1c-95ee-9725342246eb/RAFyTBD5GI.lottie" background="transparent" speed="1" style="width: 300px; height: 300px"  autoplay></dotlottie-player>
+                <h2>${title}</h2>
+                <p>${text}</p>
+            `,
         confirmButtonText: 'Cerrar',
         customClass: {
             popup: 'css-swal',
+            confirmButton: 'btn-custom'
           }
       })
     return;

@@ -229,3 +229,32 @@
 .css-swal {
     border-radius: 20px;
   }
+
+  .btn-custom {
+    background-color: black;
+    color: white;
+    border-radius: 30px;
+    padding: 10px 20px; 
+    font-size: 16px;
+    transition: 500ms;
+}
+
+.btn-custom:hover {
+    scale: 1.1;
+}
+
+.swal2-title{
+    color: black;
+}
+
+.swal2-popup{
+    width: fit-content;
+    height: auto;
+}
+
+.cross{
+    justify-self: center;
+    align-self: center;
+    margin: -70px;
+    padding: 0;
+}

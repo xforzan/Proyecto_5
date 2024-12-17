@@ -174,7 +174,7 @@ window.rightClick = () => {
             <div class="productDetails">
               <strong>${productDetails.name}</strong>
               <span>Cantidad: ${productQuantity}</span>
-              Precio: ${productDetails.price}
+              Precio: ${productDetails.price}€
             </div>
           </div>
         `;
