@@ -153,7 +153,7 @@ export const checkout = (toCheckout) => {
             document.getElementById('subtotal').textContent = total;
             document.getElementById('discount').textContent = discount;
             document.getElementById('total').textContent = totalWithDiscount;
-            alert('success','Cupón aplicado correctamente', undefined); 
+            alert('success','Cupón aplicado', undefined); 
 
         } else {
               alert('error','Cupón no válido', 'Prueba con otro cupón');

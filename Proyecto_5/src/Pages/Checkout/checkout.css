@@ -266,15 +266,20 @@
     flex-direction: column;
     align-content: space-between;
     justify-content: center;
+    margin: -20px;
+
 }
 
 .css-swal-success{
     border-radius: 30px;
+    height: 220px;
+    padding: 0;
 }
 
 .h3Swall{
     text-align: center;
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 700;
     color: black;
 }
+
