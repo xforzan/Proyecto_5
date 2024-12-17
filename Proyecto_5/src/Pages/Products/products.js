@@ -41,7 +41,7 @@ export const products = () => {
         productElement.classList.add('product');
         productElement.innerHTML = `
         <section class="productPreview">
-            <img src="${product.image}" alt="${product.name}" class="product-image">
+            <img src="${product.image}" alt="${product.name}" class="productImg">
             <h3 class="product-name">${product.name}</h3>
             </section>
             <section class="product-info">

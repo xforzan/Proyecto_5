@@ -167,15 +167,7 @@ export const checkout = (toCheckout) => {
         const phone = document.getElementById('phone').value;
 
         if (!name || !email || !address || !phone) {
-            Swal.fire({
-                title: '¡Faltan campos por rellenar!',
-                text: 'Por favor, rellena todos los campos',
-                icon: 'error',
-                confirmButtonText: 'Cerrar',
-                customClass: {
-                    popup: 'css-swal',
-                  }
-              })
+            alert('error','¡Faltan campos por rellenar!', 'Por favor, rellena todos los campos');
             return;
         }
 

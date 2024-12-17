@@ -258,3 +258,23 @@
     margin: -70px;
     padding: 0;
 }
+
+.successTick{
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    justify-content: center;
+}
+
+.css-swal-success{
+    border-radius: 30px;
+}
+
+.h3Swall{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    color: black;
+}

@@ -4,7 +4,7 @@ export const alert = (type,title,text) => {
     if (type === 'success') {
         const Toast = Swal.mixin({
             toast: true,
-            position: "bottom-end",
+            position: "top",
             showConfirmButton: false,
             timer: 3000,
             timerProgressBar: true,
@@ -15,10 +15,19 @@ export const alert = (type,title,text) => {
           });
           
           Toast.fire({
-            icon: "success",
-            title: title,
+            html: `
+                <dotlottie-player class="successTick"
+                    src="https://lottie.host/a11041cd-95f7-42ff-913d-eb54d9d79af5/gnhnRFIgxz.lottie" 
+                    background="transparent" 
+                    speed="1" 
+                    style="width: 150px; height: 150px; display:flex;" 
+                    autoplay>
+                </dotlottie-player>
+                <h3 class="h3Swall" >${title}</h3>
+            `,
+
             customClass: {
-              popup: 'css-swal',
+              popup: 'css-swal-success',
             }
           });
 
