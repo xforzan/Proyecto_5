@@ -1,4 +1,3 @@
-import { hiddenProducts } from "../Data/hiddenProducts";
 import { productsList } from "../Data/productsList";
 import { products } from "../Pages/Products/products";
 import { notFound } from "../Pages/NotFound/notFound";

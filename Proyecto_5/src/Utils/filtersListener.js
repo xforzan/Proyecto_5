@@ -2,8 +2,10 @@
 import { productsList } from "../Data/productsList";
 import { products } from "../Pages/Products/products";
 
+const hiddenProducts = [];
 
-const hiddenProducts = [...productsList];
+
+
 
 
 const capacities = [];
@@ -46,6 +48,7 @@ const orderByButton = document.querySelector("#ordenarPor");
 
 
  capacityButton.addEventListener("click", () => {
+    console.log(hiddenProducts);
 
 
     const defaultOption = "<option value='default'>Selecciona una capacidad</option>";
