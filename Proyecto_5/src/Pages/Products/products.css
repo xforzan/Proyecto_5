@@ -66,35 +66,29 @@
     gap: 20px;
     overflow-x: scroll;
     padding: 10px;
+    text-align: center;
+    overflow: none;
+    overflow-y: scroll;
+    white-space: nowrap;
 }
 
-.filters > nav::-webkit-scrollbar{
-    width: 0;
-}
-
-.filters > nav > select{
+.filters > nav > button{
+    font-size: 20px;
+    padding: 10px;
     border-radius: 30px;
     background-color: white;
-    width: 120px;
-    min-width: 130px;
-    height: 40px;
-    font-size: 20px;
+    color: black;
     text-align: center;
-    overflow-x: scroll;
+    cursor: pointer;
     border: none;
     box-shadow: 0px 0px 10px #dedede
 }
 
 
-.filters > nav > select:focus{
-    border: 0;
-    outline: none;
+.filters > nav::-webkit-scrollbar{
+    width: 0;
 }
 
-.filters > nav > select:hover{
-    overflow: none;
-    overflow-y: scroll;
-}
 
 
 .rating{

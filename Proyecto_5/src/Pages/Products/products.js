@@ -20,21 +20,15 @@ export const products = () => {
 
     productsFilters.innerHTML = `
         <nav>
-          <select name="capacidad" id="capacidad">
-          <option value="default">capacidad</option>
-          </select>
+
+          <button id="capacidad">Capacidad</button>
           
-          <select name="marca" id="marca">
-          <option value="default">marca</option>
-          </select>
+          <button id="marca">Marca</button>
 
-          <select name="ordenar por" id="ordenarPor">
-          <option value="default">ordenar por</option>
-          </select>
+          <button id="ordenarPor">Ordenar por</button>
 
-          <select name="color" id="color">
-          <option value="default">color</option>
-          </select>
+          <button id="color">Color</button>
+
         </nav>`;
     for (const product of productsList) {
         const productElement = document.createElement('article');

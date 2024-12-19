@@ -3,79 +3,235 @@ import { productsList } from "../Data/productsList";
 import { products } from "../Pages/Products/products";
 
 
-const hiddenProducts = [];
+const hiddenProducts = [...productsList];
+
+
+const capacities = [];
+let colors = [];
+let brands = [];
+
+
+for (const product of productsList) {
+    if (!capacities.includes(product.storage)) {
+        capacities.push(product.storage);
+    }
+}
+
+for (const product of productsList){
+    if (!colors.includes(product.color)){
+            colors.push(product.color);
+    }
+}
+
+
+for (const product of productsList){
+    if (!brands.includes(product.brand)){
+        brands.push(product.brand);
+    }
+}
+ 
+
+
+
 
 export const filtersListener = () => {
     
-
-
-    const capacity = document.querySelector("#capacidad");
-
-
-    let capacities = [];
-    for (const product of productsList){
-        if (!capacities.includes(product.storage)){
-            capacities.push(product.storage);
-            const option = document.createElement("option");
-        option.value = product.storage;
-        option.innerHTML = product.storage;
-        capacity.appendChild(option);
-        }
-        
-    }
-    capacity.addEventListener("change", () => {
-
-        
-        hiddenProducts.length = 0;
-        hiddenProducts.push(...productsList);
-        productsList.length = 0;
+const capacityButton = document.querySelector("#capacidad");
+const colorButton = document.querySelector("#color");
+const brandButton = document.querySelector("#marca");
+const orderByButton = document.querySelector("#ordenarPor");
 
 
 
 
-        if (capacity.value !== "default"){
-            console.log(capacity.value);
-            hiddenProducts.forEach(product => {
-                if (product.storage === capacity.value){
-                    productsList.push(product);
-                    products();
-                    console.log(productsList);
-                }
-                
-            });
-            productsList.length = 0;
-            productsList.push(...hiddenProducts);
-            hiddenProducts.length = 0;
 
-        }
-        else{
-            products();
-        }
+ capacityButton.addEventListener("click", () => {
+
+
+    const defaultOption = "<option value='default'>Selecciona una capacidad</option>";
+
+
+    let options = [];
+    options.push(defaultOption);
+
+
+    capacities.forEach(capacity => {
+        options.push(`<option value="${capacity}">${capacity}</option>`);
     });
 
 
+    Swal.fire({
+        title: 'Selecciona una capacidad',
+        html: `<select id="selectCapacity" class="swal2-input">${options}</select>`,
+        showCancelButton: true,
+        confirmButtonText: 'Aceptar',
+        cancelButtonText: 'Cancelar',
+        preConfirm: () => {
+            const selectedValue = document.querySelector("#selectCapacity").value;
+            if (selectedValue) {
+
+                if (selectedValue !== "default") {
+                    capacityButton.textContent = selectedValue;
+
+                    if (hiddenProducts.length !== 0) {
+                        hiddenProducts.forEach(product => {
+                            if (product.storage === selectedValue) {
+                                productsList.push(product);
+
+                            }
+                        });
+                        products();
+                    }
+                    else {
+                        console.log("No hay productos con esa capacidad");
+                    }
+                
+
+
+                    Swal.fire({
+                        title: 'Filtrado exitoso!',
+                        text: `Se han filtrado los productos con capacidad ${selectedValue}.`,
+                        icon: 'success',
+                        confirmButtonText: 'Aceptar'
+                    });
+
+                } else {
+                    products();
+
+                }
+            }
+        }
+    });
+});
+
+
+
+
+
+colorButton.addEventListener("click", () => {
+
+
+    const defaultOption = "<option value='default'>Selecciona un color</option>";
+
+
+    let options = [];
+    options.push(defaultOption);
+
+
+    colors.forEach(color => {
+        options.push(`<option value="${color}">${color}</option>`);
+    });
+
+
+    Swal.fire({
+        title: 'Selecciona un Color',
+        html: `<select id="selectCapacity" class="swal2-input">${options}</select>`,
+        showCancelButton: true,
+        confirmButtonText: 'Aceptar',
+        cancelButtonText: 'Cancelar',
+        preConfirm: () => {
+            const selectedValue = document.querySelector("#selectCapacity").value;
+            if (selectedValue) {
+
+                if (selectedValue !== "default") {
+                    capacityButton.textContent = selectedValue;
+
+                    if (hiddenProducts.length !== 0) {
+                        hiddenProducts.forEach(product => {
+                            if (product.color === selectedValue) {
+                                productsList.push(product);
+
+                            }
+                        });
+                        products();
+                    }
+                    else {
+                        console.log("No hay productos con ese Color");
+                    }
+                
+
+
+                    Swal.fire({
+                        title: 'Filtrado exitoso!',
+                        text: `Se han filtrado los productos con el Color ${selectedValue}.`,
+                        icon: 'success',
+                        confirmButtonText: 'Aceptar'
+                    });
+
+                } else {
+                    products();
+
+                }
+            }
+        }
+    });
+});
 
 
 
 
 
 
+brandButton.addEventListener("click", () => {
 
 
+    const defaultOption = "<option value='default'>Selecciona una Marca</option>";
 
 
+    let options = [];
+    options.push(defaultOption);
 
 
-    const color = document.querySelector("#color");
-    let colors = [];
+    brands.forEach(brand => {
+        options.push(`<option value="${brand}">${brand}</option>`);
+    });
 
 
+    Swal.fire({
+        title: 'Selecciona una Marca',
+        html: `<select id="selectCapacity" class="swal2-input">${options}</select>`,
+        showCancelButton: true,
+        confirmButtonText: 'Aceptar',
+        cancelButtonText: 'Cancelar',
+        preConfirm: () => {
+            const selectedValue = document.querySelector("#selectCapacity").value;
+            if (selectedValue) {
 
-    const brand = document.querySelector("#marca");
-    let brands = [];
+                if (selectedValue !== "default") {
+                    capacityButton.textContent = selectedValue;
+
+                    if (hiddenProducts.length !== 0) {
+                        hiddenProducts.forEach(product => {
+                            if (product.brand === selectedValue) {
+                                productsList.push(product);
+
+                            }
+                        });
+                        products();
+                    }
+                    else {
+                        console.log("No hay productos con esa Marca");
+                    }
+                
 
 
-    const orderBy = document.querySelector("#ordenarPor");
+                    Swal.fire({
+                        title: 'Filtrado exitoso!',
+                        text: `Se han filtrado los productos con la Marca ${selectedValue}.`,
+                        icon: 'success',
+                        confirmButtonText: 'Aceptar'
+                    });
+
+                } else {
+                    products();
+
+                }
+            }
+        }
+    });
+});
+
+
 
 
 
