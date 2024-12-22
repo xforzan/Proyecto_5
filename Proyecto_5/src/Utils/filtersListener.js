@@ -77,22 +77,32 @@ const orderByButton = document.querySelector("#ordenarPor");
                     capacityButton.textContent = selectedValue;
 
                     if (productsList.length !== 0) {
-                        productsList.forEach(product => {
+
+
+                        let hiddenProducts = [];
+                    
+
+                        for (const product of productsList) {
                             if (product.storage !== selectedValue) {
+                                console.log(product.storage);
                                 hiddenProducts.push(product);
-                                productsList.splice(productsList.indexOf(product), 1);
-                                console.log(productsList.length);
 
-
+                                productsList.splice(0, productsList.length, ...productsList.filter(product => product.storage === selectedValue));
                             }
-                            // else {
-                            //     hiddenProducts.forEach((hiddenProduct) => {
-                            //         if (hiddenProduct.storage === selectedValue) {
-                            //             productsList.push(hiddenProduct);
-                            //         }
-                            //     });
-                            // }
-                        });
+                            else {
+                                for (const hiddenProduct of hiddenProducts) {
+                                    if (hiddenProduct.storage === selectedValue) {
+                                        productsList.push(hiddenProduct);
+                                    }
+                                }
+
+                                
+                            }
+                        }
+
+                        
+                    
+
                         products();
                     }
                     else {
