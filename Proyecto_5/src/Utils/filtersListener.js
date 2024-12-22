@@ -76,12 +76,22 @@ const orderByButton = document.querySelector("#ordenarPor");
                 if (selectedValue !== "default") {
                     capacityButton.textContent = selectedValue;
 
-                    if (hiddenProducts.length !== 0) {
-                        hiddenProducts.forEach(product => {
-                            if (product.storage === selectedValue) {
-                                productsList.push(product);
+                    if (productsList.length !== 0) {
+                        productsList.forEach(product => {
+                            if (product.storage !== selectedValue) {
+                                hiddenProducts.push(product);
+                                productsList.splice(productsList.indexOf(product), 1);
+                                console.log(productsList.length);
+
 
                             }
+                            // else {
+                            //     hiddenProducts.forEach((hiddenProduct) => {
+                            //         if (hiddenProduct.storage === selectedValue) {
+                            //             productsList.push(hiddenProduct);
+                            //         }
+                            //     });
+                            // }
                         });
                         products();
                     }
@@ -226,6 +236,7 @@ brandButton.addEventListener("click", () => {
                     });
 
                 } else {
+
                     products();
 
                 }
