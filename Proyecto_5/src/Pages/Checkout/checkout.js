@@ -23,6 +23,7 @@ export const checkout = (toCheckout) => {
         } else {
             productCount.push({ productId: productId, quantity: 1 });
         }
+        console.log(productCount);
     });
 
 

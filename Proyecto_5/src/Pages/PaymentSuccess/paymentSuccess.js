@@ -90,6 +90,13 @@ export const paymentSuccess = (total,name, toCheckout) => {
             }
 
             localStorage.setItem('users', JSON.stringify(users));
+
+            productsList.forEach(p => {
+                const product = productCount.find(item => item.productId === p.id);
+                if (product) {
+                    p.quantity -= product.quantity;
+                }
+            });
             
         });
     }
@@ -100,12 +107,12 @@ export const paymentSuccess = (total,name, toCheckout) => {
         cartCountElementMobile.textContent = 0;
 
 
-        productsList.forEach(product => {
-            const cartProduct = cart.find(c => c.id === product.id);
-            if (cartProduct) {
-                product.quantity -= cartProduct.quantity;
-            }
-        });
+        // productsList.forEach(product => {
+        //     const cartProduct = cart.find(c => c.id === product.id);
+        //     if (cartProduct) {
+        //         product.quantity -= cartProduct.quantity;
+        //     }
+        // });
 
     localStorage.setItem('productsList', JSON.stringify(productsList));
 
@@ -114,4 +121,5 @@ export const paymentSuccess = (total,name, toCheckout) => {
     cart.length = 0;
     localStorage.removeItem('cartCount');
     localStorage.removeItem('cart');
+    productsList
 }

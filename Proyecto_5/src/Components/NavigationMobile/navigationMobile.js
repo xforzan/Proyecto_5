@@ -12,8 +12,7 @@ export const navigationMobile = () => {
     nav.className = 'navMobile';
     nav.innerHTML = `
             <ul>
-                <li id="home"><a href="#home"></a></li>
-                <li><button class="changeTheme" id="lightTheme"><span></span></button></li>
+                <li id="home"></li>
                 <li id="cartMobile" class="cartIcon-container">
                     <img src="./shopping-bag.svg" alt"shopping bag" class="shoppingBag">
                     <span id="cart-count2"></span>
@@ -23,6 +22,9 @@ export const navigationMobile = () => {
                 </li>
             </ul>`
     
+
+
+
     document.body.appendChild(nav);
 
     const cartCountElement = document.getElementById('cart-count2');
@@ -47,5 +49,12 @@ export const navigationMobile = () => {
         avatarImg.src = user.avatar;
         avatarImg.alt = "avatar";
     }
+
+
+    const home = document.querySelector('#home');
+    home.addEventListener('click', () => {
+        location.reload();
+    });
+    
 };
 

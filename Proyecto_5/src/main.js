@@ -23,11 +23,11 @@ navigationMobile();
 footer();
 
 linkPage('#cart', cartPage);
-linkPage("#logo", products);
-linkPage("#home", products);
 linkPage("#cartMobile", cartPage);
 linkPage("#contact", contact);
 linkPage("#aboutUs", aboutUs);
+
+
 
 searchListener()
 changeTheme()

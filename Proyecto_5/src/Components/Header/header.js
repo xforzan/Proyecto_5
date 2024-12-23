@@ -35,6 +35,10 @@ export const header = () => {
     </nav>
   `;
 
+  const logo = document.querySelector('#logo');
+  logo.addEventListener('click', () => {
+    location.reload();
+  });
 
   const cartCountElement = document.getElementById('cart-count');
   
