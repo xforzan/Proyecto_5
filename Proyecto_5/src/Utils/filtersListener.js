@@ -16,20 +16,13 @@ let colors = [];
 let brands = [];
 
 
-for (const product of productsList) {
+for (const product of productsList){
     if (!capacities.includes(product.storage)) {
         capacities.push(product.storage);
     }
-}
-
-for (const product of productsList){
     if (!colors.includes(product.color)){
-            colors.push(product.color);
-    }
+        colors.push(product.color);
 }
-
-
-for (const product of productsList){
     if (!brands.includes(product.brand)){
         brands.push(product.brand);
     }
@@ -229,8 +222,6 @@ brandButton.addEventListener("click", () => {
                 if (selectedValue !== "default") {
                     capacityButton.textContent = selectedValue;
 
-                    if (productsList.length !== 0) {
-
 
                         for (let i = productsList.length - 1; i >= 0; i--) {
                             if (productsList[i].brand !== selectedValue) {
@@ -248,19 +239,17 @@ brandButton.addEventListener("click", () => {
                         }
 
                         products();
-                    }
-                    else {
-                        console.log("No hay productos con esa capacidad");
-                    }
-                
 
+                        if (productsList.length !== 0) {
 
-                    Swal.fire({
-                        title: 'Filtrado exitoso!',
-                        text: `Se han filtrado los productos con capacidad ${selectedValue}.`,
-                        icon: 'success',
-                        confirmButtonText: 'Aceptar'
-                    });
+                        Swal.fire({
+                            title: 'Filtrado exitoso!',
+                            text: `Se han filtrado los productos con la marca ${selectedValue}.`,
+                            icon: 'success',
+                            confirmButtonText: 'Aceptar'
+                        });
+                    }
+
 
                 } else {
                     window.location.reload();
@@ -272,10 +261,61 @@ brandButton.addEventListener("click", () => {
 });
 
 
+orderByButton.addEventListener("click", () => {
+
+    const defaultOption = "<option value='default'>Selecciona una opción</option>";
+let options = [];
+options.push(defaultOption);
+options.push(`<option value="priceAsc">Precio ascendente</option>`);
+options.push(`<option value="priceDesc">Precio descendente</option>`);
+options.push(`<option value="starsAsc">Valoración ascendente</option>`);
+options.push(`<option value="starsDesc">Valoración descendente</option>`);
+
+Swal.fire({
+    title: 'Ordenar por',
+    html: `<select id="selectCapacity" class="swal2-input">${options}</select>`,
+    showCancelButton: true,
+    confirmButtonText: 'Aceptar',
+    cancelButtonText: 'Cancelar',
+    preConfirm: () => {
+        const selectedValue = document.querySelector("#selectCapacity").value;
+        if (selectedValue) {
+            if (selectedValue !== "default") {
+                switch (selectedValue) {
+                    case "priceAsc":
+                        productsList.sort((a, b) => a.price - b.price);
+                        break;
+                    case "priceDesc":
+                        productsList.sort((a, b) => b.price - a.price);
+                        break;
+                    case "starsAsc":
+                        productsList.sort((a, b) => a.stars - b.stars);
+                        break;
+                    case "starsDesc":
+                        productsList.sort((a, b) => b.stars - a.stars);
+                        break;
+                    default:
+                        break;
+                }
+                products();
+                Swal.fire({
+                    title: 'Ordenación exitosa!',
+                    text: `Se han ordenado los productos por ${selectedValue}.`,
+                    icon: 'success',
+                    confirmButtonText: 'Aceptar'
+                });
+            } else {
+                window.location.reload();
+            }
+        }
+    }
+});
+
+});
 
 
 
 } else {
-    notFound(undefined);
+    notFound("filters",undefined);
 }
 }

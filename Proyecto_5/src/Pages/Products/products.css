@@ -53,7 +53,7 @@
 .filters {
     position: sticky;
     top: 80px;
-    z-index: 0;
+    z-index: 97;
     width: 100%;
     background-color: white;
     padding: 0px;

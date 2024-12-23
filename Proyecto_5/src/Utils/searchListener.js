@@ -17,7 +17,7 @@ export const searchListener = () => {
 
 
             if (filteredProducts.length === 0) {
-                notFound(searchBar.value);
+                notFound("searchBar",searchBar.value);
             } else {
 
                 productsList.length = 0;

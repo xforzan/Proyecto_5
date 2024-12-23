@@ -41,7 +41,7 @@ export const products = () => {
             <section class="product-info">
             <p class="product-price">${product.price}€</p>
             <div class="rating">
-            <p class="stars">${product.stars}</p>
+            <p class="stars">${product.stars}/5</p>
             <p class="reviews">${product.reviews}</p>
             </div>
             <button class="productButton" id="buy-button-${product.id}">Comprar</button>
