@@ -30,3 +30,48 @@ a{
   text-decoration: none;
   color: white;
 }
+
+
+
+
+.swal2-popup {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  border-radius: 30px;
+}
+
+
+.swal2-title {
+  color: #333;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+
+.swal2-confirm, .swal2-cancel {
+  background-color: #000000;
+  color: white;
+  border: none;
+  padding: 10px 20px; 
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer; 
+}
+
+
+.swal2-confirm:hover, .swal2-cancel:hover {
+  background-color: #282828;
+}
+
+
+.swal2-html-container select{
+  border-radius: 30px;
+  text-align: center;
+
+}
+
+.success-html-container{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

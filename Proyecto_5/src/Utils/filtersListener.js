@@ -2,13 +2,11 @@
 import { productsList } from "../Data/productsList";
 import { products } from "../Pages/Products/products";
 import { notFound } from "../Pages/NotFound/notFound";
+import { alert } from "../Utils/alert";
 
 const hiddenProducts = [];
 const hiddenProducts2 = [];
 const hiddenProducts3 = [];
-
-
-
 
 
 const capacities = [];
@@ -66,6 +64,13 @@ if (productsList.length !== 0) {
         showCancelButton: true,
         confirmButtonText: 'Aceptar',
         cancelButtonText: 'Cancelar',
+        customClass: {
+            popup: 'swal2-popup',
+            confirmButton: 'swal2-confirm',
+            cancelButton: 'swal2-cancel',
+            title: 'swal2-title',
+            htmlContainer: 'swal2-html-container',
+        },
         preConfirm: () => {
             const selectedValue = document.querySelector("#selectCapacity").value;
             if (selectedValue) {
@@ -73,7 +78,7 @@ if (productsList.length !== 0) {
                 if (selectedValue !== "default") {
                     capacityButton.textContent = selectedValue;
 
-                    if (productsList.length !== 0) {
+
 
 
                         for (let i = productsList.length - 1; i >= 0; i--) {
@@ -92,19 +97,12 @@ if (productsList.length !== 0) {
                         }
 
                         products();
+
+                        if (productsList.length !== 0) {
+                            alert ('filterSuccess','Filtrado exitoso!','Se han filtrado los productos con capacidad de ' + selectedValue + '.');
                     }
-                    else {
-                        console.log("No hay productos con esa capacidad");
-                    }
-                
 
 
-                    Swal.fire({
-                        title: 'Filtrado exitoso!',
-                        text: `Se han filtrado los productos con capacidad ${selectedValue}.`,
-                        icon: 'success',
-                        confirmButtonText: 'Aceptar'
-                    });
 
                 } else {
                     window.location.reload();
@@ -147,7 +145,7 @@ colorButton.addEventListener("click", () => {
                 if (selectedValue !== "default") {
                     capacityButton.textContent = selectedValue;
 
-                    if (productsList.length !== 0) {
+
 
 
                         for (let i = productsList.length - 1; i >= 0; i--) {
@@ -166,19 +164,11 @@ colorButton.addEventListener("click", () => {
                         }
 
                         products();
+                        if (productsList.length !== 0) {
+                            alert ('filterSuccess','Filtrado exitoso!','Se han filtrado los productos de color ' + selectedValue + '.');
                     }
-                    else {
-                        console.log("No hay productos con esa capacidad");
-                    }
-                
 
-
-                    Swal.fire({
-                        title: 'Filtrado exitoso!',
-                        text: `Se han filtrado los productos con capacidad ${selectedValue}.`,
-                        icon: 'success',
-                        confirmButtonText: 'Aceptar'
-                    });
+            
 
                 } else {
                     window.location.reload();
@@ -241,13 +231,7 @@ brandButton.addEventListener("click", () => {
                         products();
 
                         if (productsList.length !== 0) {
-
-                        Swal.fire({
-                            title: 'Filtrado exitoso!',
-                            text: `Se han filtrado los productos con la marca ${selectedValue}.`,
-                            icon: 'success',
-                            confirmButtonText: 'Aceptar'
-                        });
+                            alert ('filterSuccess','Filtrado exitoso!','Se han filtrado los productos de la marca ' + selectedValue + '.');
                     }
 
 
@@ -279,6 +263,7 @@ Swal.fire({
     cancelButtonText: 'Cancelar',
     preConfirm: () => {
         const selectedValue = document.querySelector("#selectCapacity").value;
+        const selectedValueText = document.querySelector("#selectCapacity").selectedOptions[0].textContent;
         if (selectedValue) {
             if (selectedValue !== "default") {
                 switch (selectedValue) {
@@ -298,12 +283,9 @@ Swal.fire({
                         break;
                 }
                 products();
-                Swal.fire({
-                    title: 'Ordenación exitosa!',
-                    text: `Se han ordenado los productos por ${selectedValue}.`,
-                    icon: 'success',
-                    confirmButtonText: 'Aceptar'
-                });
+                if (productsList.length !== 0) {
+                    alert ('filterSuccess','Filtrado exitoso!','Se han ordenado los productos por ' + selectedValueText + '.');
+            }
             } else {
                 window.location.reload();
             }

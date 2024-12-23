@@ -49,5 +49,23 @@ export const alert = (type,title,text) => {
       })
     return;
 }
+else if (type === 'filterSuccess'){
+  Swal.fire({
+    html: `
+    <section class="success-html-container">
+        <dotlottie-player class="successTick"
+            src="https://lottie.host/a11041cd-95f7-42ff-913d-eb54d9d79af5/gnhnRFIgxz.lottie" 
+            background="transparent" 
+            speed="1" 
+            style="width: 150px; height: 150px; display: flex;" 
+            autoplay>
+        </dotlottie-player>
+        <h3 class="h3Swall">${title}</h3>
+        <p>${text}</p>
+    </section>
+    `,
+    confirmButtonText: 'Aceptar',
+});
+}
 
 }
