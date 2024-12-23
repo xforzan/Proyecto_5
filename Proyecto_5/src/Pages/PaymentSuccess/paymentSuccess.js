@@ -6,8 +6,7 @@ import { userStatus } from '../../Data/userStatus';
 import { users } from '../../Data/users';
 import { cart } from '../../Data/cart';
 import { products } from '../Products/products';
-
-const productsList =  localStorage.getItem('productsList') ? JSON.parse(localStorage.getItem('productsList')) : [];
+import { listProducts } from '../../main';
 
 export const paymentSuccess = (total,name, toCheckout) => {
     console.log(name,total);
@@ -91,7 +90,7 @@ export const paymentSuccess = (total,name, toCheckout) => {
 
             localStorage.setItem('users', JSON.stringify(users));
 
-            productsList.forEach(p => {
+            listProducts.forEach(p => {
                 const product = productCount.find(item => item.productId === p.id);
                 if (product) {
                     p.quantity -= product.quantity;
@@ -107,19 +106,11 @@ export const paymentSuccess = (total,name, toCheckout) => {
         cartCountElementMobile.textContent = 0;
 
 
-        // productsList.forEach(product => {
-        //     const cartProduct = cart.find(c => c.id === product.id);
-        //     if (cartProduct) {
-        //         product.quantity -= cartProduct.quantity;
-        //     }
-        // });
-
-    localStorage.setItem('productsList', JSON.stringify(productsList));
+    localStorage.setItem('productsList', JSON.stringify(listProducts));
 
 
 
     cart.length = 0;
     localStorage.removeItem('cartCount');
     localStorage.removeItem('cart');
-    productsList
 }

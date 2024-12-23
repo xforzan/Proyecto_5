@@ -33,3 +33,5 @@ searchListener()
 changeTheme()
 
 localStorage.setItem('productsList', JSON.stringify(productsList));
+
+export const listProducts =  localStorage.getItem('productsList') ? JSON.parse(localStorage.getItem('productsList')) : [];

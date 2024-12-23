@@ -5,8 +5,8 @@ import { checkout } from '../../Pages/Checkout/checkout';
 import { toCheckout } from '../../Data/toCheckout';
 import { alert } from '../../Utils/alert';
 import { scrollToTop } from '../../Utils/scrollToTop';
+import { listProducts } from '../../main';
 
-const productsList =  localStorage.getItem('productsList') ? JSON.parse(localStorage.getItem('productsList')) : [];
 
 export const cartPage = () => {
     cleanPage('main');
@@ -30,7 +30,7 @@ export const cartPage = () => {
         for (const cartItem of cart) {
             const quantity = cartItem.quantity;
             const productId = cartItem.id;
-            const product = productsList.find(p => p.id === productId);
+            const product = listProducts.find(p => p.id === productId);
             total += product.price * quantity;
 
             const productItem = document.createElement('li');

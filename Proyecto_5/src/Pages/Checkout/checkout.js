@@ -5,6 +5,7 @@ import { coupons } from '../../Data/coupons';
 import { scrollToTop } from '../../Utils/scrollToTop';
 import { paymentSuccess } from '../PaymentSuccess/paymentSuccess';
 import { alert } from '../../Utils/alert';
+import { listProducts } from '../../main';
 
 const productsList =  localStorage.getItem('productsList') ? JSON.parse(localStorage.getItem('productsList')) : [];
 
@@ -81,7 +82,7 @@ export const checkout = (toCheckout) => {
 
 
     productCount.forEach(item => {
-        const product = productsList.find(p => p.id === item.productId);
+        const product = listProducts.find(p => p.id === item.productId);
 
         const productCheckout = document.createElement('div');
         productCheckout.classList.add('productCheckout');
