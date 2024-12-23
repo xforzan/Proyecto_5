@@ -3,6 +3,8 @@ import { productsList } from "../Data/productsList";
 import { products } from "../Pages/Products/products";
 
 const hiddenProducts = [];
+const hiddenProducts2 = [];
+const hiddenProducts3 = [];
 
 
 
@@ -79,29 +81,20 @@ const orderByButton = document.querySelector("#ordenarPor");
                     if (productsList.length !== 0) {
 
 
-                        let hiddenProducts = [];
-                    
-
-                        for (const product of productsList) {
-                            if (product.storage !== selectedValue) {
-                                console.log(product.storage);
-                                hiddenProducts.push(product);
-
-                                productsList.splice(0, productsList.length, ...productsList.filter(product => product.storage === selectedValue));
-                            }
-                            else {
-                                for (const hiddenProduct of hiddenProducts) {
-                                    if (hiddenProduct.storage === selectedValue) {
-                                        productsList.push(hiddenProduct);
-                                    }
-                                }
-
-                                
+                        for (let i = productsList.length - 1; i >= 0; i--) {
+                            if (productsList[i].storage !== selectedValue) {
+                                hiddenProducts.push(productsList[i]);
+                                productsList.splice(i, 1);
                             }
                         }
-
                         
-                    
+
+                        for (let j = hiddenProducts.length - 1; j >= 0; j--) {
+                            if (hiddenProducts[j].storage === selectedValue) {
+                                productsList.push(hiddenProducts[j]);
+                                hiddenProducts.splice(j, 1);
+                            }
+                        }
 
                         products();
                     }
@@ -119,7 +112,7 @@ const orderByButton = document.querySelector("#ordenarPor");
                     });
 
                 } else {
-                    products();
+                    window.location.reload();
 
                 }
             }
@@ -159,30 +152,41 @@ colorButton.addEventListener("click", () => {
                 if (selectedValue !== "default") {
                     capacityButton.textContent = selectedValue;
 
-                    if (hiddenProducts.length !== 0) {
-                        hiddenProducts.forEach(product => {
-                            if (product.color === selectedValue) {
-                                productsList.push(product);
+                    if (productsList.length !== 0) {
 
+
+                        for (let i = productsList.length - 1; i >= 0; i--) {
+                            if (productsList[i].color !== selectedValue) {
+                                hiddenProducts2.push(productsList[i]);
+                                productsList.splice(i, 1);
                             }
-                        });
+                        }
+                        
+
+                        for (let j = hiddenProducts2.length - 1; j >= 0; j--) {
+                            if (hiddenProducts2[j].color === selectedValue) {
+                                productsList.push(hiddenProducts2[j]);
+                                hiddenProducts2.splice(j, 1);
+                            }
+                        }
+
                         products();
                     }
                     else {
-                        console.log("No hay productos con ese Color");
+                        console.log("No hay productos con esa capacidad");
                     }
                 
 
 
                     Swal.fire({
                         title: 'Filtrado exitoso!',
-                        text: `Se han filtrado los productos con el Color ${selectedValue}.`,
+                        text: `Se han filtrado los productos con capacidad ${selectedValue}.`,
                         icon: 'success',
                         confirmButtonText: 'Aceptar'
                     });
 
                 } else {
-                    products();
+                    window.location.reload();
 
                 }
             }
@@ -223,31 +227,41 @@ brandButton.addEventListener("click", () => {
                 if (selectedValue !== "default") {
                     capacityButton.textContent = selectedValue;
 
-                    if (hiddenProducts.length !== 0) {
-                        hiddenProducts.forEach(product => {
-                            if (product.brand === selectedValue) {
-                                productsList.push(product);
+                    if (productsList.length !== 0) {
 
+
+                        for (let i = productsList.length - 1; i >= 0; i--) {
+                            if (productsList[i].brand !== selectedValue) {
+                                hiddenProducts3.push(productsList[i]);
+                                productsList.splice(i, 1);
                             }
-                        });
+                        }
+                        
+
+                        for (let j = hiddenProducts3.length - 1; j >= 0; j--) {
+                            if (hiddenProducts3[j].brand === selectedValue) {
+                                productsList.push(hiddenProducts3[j]);
+                                hiddenProducts3.splice(j, 1);
+                            }
+                        }
+
                         products();
                     }
                     else {
-                        console.log("No hay productos con esa Marca");
+                        console.log("No hay productos con esa capacidad");
                     }
                 
 
 
                     Swal.fire({
                         title: 'Filtrado exitoso!',
-                        text: `Se han filtrado los productos con la Marca ${selectedValue}.`,
+                        text: `Se han filtrado los productos con capacidad ${selectedValue}.`,
                         icon: 'success',
                         confirmButtonText: 'Aceptar'
                     });
 
                 } else {
-
-                    products();
+                    window.location.reload();
 
                 }
             }
