@@ -92,4 +92,3 @@ main.appendChild(productsContainer);
     }
     filtersListener();
 }
-

@@ -8,6 +8,8 @@ const hiddenProducts = [];
 const hiddenProducts2 = [];
 const hiddenProducts3 = [];
 
+const allProducts = [...productsList, ...hiddenProducts, ...hiddenProducts2, ...hiddenProducts3];
+export { allProducts };
 
 const capacities = [];
 let colors = [];
@@ -289,6 +291,8 @@ Swal.fire({
             } else {
                 window.location.reload();
             }
+
+            
         }
     }
 });
@@ -300,4 +304,6 @@ Swal.fire({
 } else {
     notFound("filters",undefined);
 }
+
+
 }

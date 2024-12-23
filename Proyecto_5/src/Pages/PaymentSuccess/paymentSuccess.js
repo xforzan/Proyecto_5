@@ -5,8 +5,9 @@ import { scrollToTop } from '../../Utils/scrollToTop';
 import { userStatus } from '../../Data/userStatus';
 import { users } from '../../Data/users';
 import { cart } from '../../Data/cart';
-import { productsList } from '../../Data/productsList';
 import { products } from '../Products/products';
+
+const productsList =  localStorage.getItem('productsList') ? JSON.parse(localStorage.getItem('productsList')) : [];
 
 export const paymentSuccess = (total,name, toCheckout) => {
     console.log(name,total);
@@ -57,6 +58,7 @@ export const paymentSuccess = (total,name, toCheckout) => {
     const backButton = document.getElementById('back-button');
     backButton.addEventListener('click', () => {
         products();
+        location.reload();
     });
 
 

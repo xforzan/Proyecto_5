@@ -1,11 +1,12 @@
 import './cart.css';
 import { cleanPage } from '../../Utils/cleanPage';
 import { cart } from '../../Data/cart';
-import { productsList } from '../../Data/productsList';
 import { checkout } from '../../Pages/Checkout/checkout';
 import { toCheckout } from '../../Data/toCheckout';
 import { alert } from '../../Utils/alert';
 import { scrollToTop } from '../../Utils/scrollToTop';
+
+const productsList =  localStorage.getItem('productsList') ? JSON.parse(localStorage.getItem('productsList')) : [];
 
 export const cartPage = () => {
     cleanPage('main');
