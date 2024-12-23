@@ -6,6 +6,8 @@ import { scrollToTop } from '../../Utils/scrollToTop';
 import { paymentSuccess } from '../PaymentSuccess/paymentSuccess';
 import { alert } from '../../Utils/alert';
 import { listProducts } from '../../main';
+import { users } from '../../Data/users';
+import { userStatus } from '../../Data/userStatus';
 
 const productsList =  localStorage.getItem('productsList') ? JSON.parse(localStorage.getItem('productsList')) : [];
 
@@ -168,8 +170,11 @@ export const checkout = (toCheckout) => {
         const email = document.getElementById('email').value;
         const address = document.getElementById('address').value;
         const phone = document.getElementById('phone').value;
+        const city = document.getElementById('city').value;
+        const zip = document.getElementById('zip').value;
+        const country = document.getElementById('country').value;
 
-        if (!name || !email || !address || !phone) {
+        if (!name || !email || !address || !phone || !city || !zip || !country) {
             alert('error','¡Faltan campos por rellenar!', 'Por favor, rellena todos los campos');
             return;
         }
@@ -177,4 +182,17 @@ export const checkout = (toCheckout) => {
         const total = parseFloat(document.getElementById('total').textContent);
         paymentSuccess(total, name, toCheckout);
     });
+
+    if (userStatus.logged === true) {
+        const user = users.find(u => u.id === userStatus.id);
+        document.getElementById('name').value = user.name;
+        document.getElementById('email').value = user.email;
+        document.getElementById('address').value = user.address;
+        document.getElementById('phone').value = user.phone;
+        document.getElementById('city').value = user.city;
+        document.getElementById('zip').value = user.postalCode;
+        document.getElementById('country').value = user.country;
+
+        console.log(user);
+    }
 };
