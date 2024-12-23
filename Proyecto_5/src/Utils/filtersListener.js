@@ -1,6 +1,7 @@
 
 import { productsList } from "../Data/productsList";
 import { products } from "../Pages/Products/products";
+import { notFound } from "../Pages/NotFound/notFound";
 
 const hiddenProducts = [];
 const hiddenProducts2 = [];
@@ -48,7 +49,8 @@ const orderByButton = document.querySelector("#ordenarPor");
 
 
 
-
+if (productsList.length !== 0) {
+    
  capacityButton.addEventListener("click", () => {
     console.log(hiddenProducts);
 
@@ -273,4 +275,7 @@ brandButton.addEventListener("click", () => {
 
 
 
+} else {
+    notFound(undefined);
+}
 }
