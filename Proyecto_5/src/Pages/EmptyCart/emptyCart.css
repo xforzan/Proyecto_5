@@ -1,0 +1,15 @@
+.emptyCart-container{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.emptyCart-container img{
+    width: 100%;
+    max-width: 400px;
+}

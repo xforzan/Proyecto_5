@@ -25,7 +25,7 @@ footer();
 linkPage('#cart', cartPage);
 linkPage("#cartMobile", cartPage);
 linkPage(".contact", contact);
-linkPage("#aboutUs", aboutUs);
+linkPage(".aboutUs", aboutUs);
 
 
 

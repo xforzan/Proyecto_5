@@ -14,7 +14,7 @@ export const header = () => {
     <nav class="links">
     <ul>
     <li class="contact"><a href="#">Contacto</a></li>
-    <li id="aboutUs"><a href="#">Sobre Nosotros</a></li>
+    <li class="aboutUs"><a href="#">Sobre Nosotros</a></li>
     </ul>
     </nav>
       <div class="searchBar">

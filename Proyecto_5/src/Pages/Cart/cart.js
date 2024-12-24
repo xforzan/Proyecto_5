@@ -6,6 +6,7 @@ import { toCheckout } from '../../Data/toCheckout';
 import { alert } from '../../Utils/alert';
 import { scrollToTop } from '../../Utils/scrollToTop';
 import { listProducts } from '../../main';
+import { emptyCart } from '../EmptyCart/emptyCart';
 
 
 export const cartPage = () => {
@@ -16,9 +17,7 @@ export const cartPage = () => {
     cartContainer.classList.add('cart-container');
 
     if (cart.length === 0) {
-        const emptyMessage = document.createElement('p');
-        emptyMessage.textContent = 'El carrito está vacío';
-        cartContainer.appendChild(emptyMessage);
+        emptyCart();
         localStorage.removeItem('cartCount');
         const cartCountElement = document.getElementById('cart-count');
         cartCountElement.textContent = 0;

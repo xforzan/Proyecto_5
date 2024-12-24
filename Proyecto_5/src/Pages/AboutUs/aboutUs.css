@@ -1,0 +1,11 @@
+.aboutUs-container{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.aboutUs-container h1{
+    text-align: center;
+}
