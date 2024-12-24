@@ -4,6 +4,7 @@ import { cleanPage } from "../../Utils/cleanPage";
 import { scrollToTop } from "../../Utils/scrollToTop";
 
 export const emptyCart = () => {
+    document.title = "Carrito vacío";
     cleanPage("main");
     scrollToTop();
     
@@ -20,7 +21,7 @@ export const emptyCart = () => {
     backToProducts.addEventListener("click", () => {
         window.location.reload();
     });
-    
+
     const main = document.querySelector("main");
     main.appendChild(emptyCartContainer);
 }

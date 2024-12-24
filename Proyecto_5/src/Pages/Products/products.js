@@ -11,6 +11,7 @@ import { alert } from '../../Utils/alert';
 
 
 export const products = () => {
+    
     cleanPage('main');
     
     const productsContainer = document.createElement('div');

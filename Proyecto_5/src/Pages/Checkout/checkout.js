@@ -12,6 +12,7 @@ import { userStatus } from '../../Data/userStatus';
 const productsList =  localStorage.getItem('productsList') ? JSON.parse(localStorage.getItem('productsList')) : [];
 
 export const checkout = (toCheckout) => {
+    document.title = 'Finalizar compra';
     cleanPage('main');
     scrollToTop();
 

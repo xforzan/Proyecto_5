@@ -135,9 +135,7 @@
 
 
   
-  #ordersSection {
-    display: none;
-  }
+
   
 
 
@@ -194,3 +192,22 @@
 .selected{
   color: white;
 }
+
+
+.noBoughtProducts{
+  margin-top: 100px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.noBoughtProducts img{
+  width: 200px;
+}
+

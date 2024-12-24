@@ -6,6 +6,7 @@ import { scrollToTop } from '../../Utils/scrollToTop';
 import { alert } from '../../Utils/alert';
 
 export const login = () => {
+    document.title = 'Iniciar sesión';
     cleanPage('main');
     scrollToTop();
 

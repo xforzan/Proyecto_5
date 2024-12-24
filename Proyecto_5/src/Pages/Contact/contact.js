@@ -4,6 +4,7 @@ import { scrollToTop } from '../../Utils/scrollToTop';
 import { alert } from '../../Utils/alert';
 
 export const contact = () => {
+    document.title = 'Contacto';
     cleanPage('main');
     scrollToTop();
 

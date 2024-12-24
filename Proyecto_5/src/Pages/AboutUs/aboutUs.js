@@ -5,6 +5,7 @@ import { scrollToTop } from '../../Utils/scrollToTop';
 import { alert } from '../../Utils/alert';
 
 export const aboutUs = () => {
+    document.title = 'Sobre Nosotros';
     cleanPage('main');
     scrollToTop();
     const aboutUsContainer = document.createElement('div');

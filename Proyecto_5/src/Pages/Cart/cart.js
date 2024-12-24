@@ -10,6 +10,7 @@ import { emptyCart } from '../EmptyCart/emptyCart';
 
 
 export const cartPage = () => {
+    document.title = "Carrito";
     cleanPage('main');
     scrollToTop();
 

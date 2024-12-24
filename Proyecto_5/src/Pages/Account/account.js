@@ -9,6 +9,7 @@ import { alert } from '../../Utils/alert';
 
 export const account = () => {
   cleanPage('main');
+  document.title = "Cuenta";
 
   const user = users.find(u => u.id === userStatus.id);
 
@@ -106,12 +107,13 @@ export const account = () => {
   const accountSection = document.getElementById('accountSection');
   
   ordersBtn.addEventListener('click', () => {
-    ordersSection.style.display = 'block';
+    ordersSection.style.display = 'contents';
     accountSection.style.display = 'none';
   });
   
   accountBtn.addEventListener('click', () => {
     ordersSection.style.display = 'none';
+    ordersSection.style.flexDirection = 'row';
     accountSection.style.display = 'block';
   });
 
@@ -143,12 +145,16 @@ window.rightClick = () => {
 
 
   if (user.boughtProducts.length === 0) {
-    const productItem = document.createElement('li');
-    const purchasedProductsList = document.getElementById('purchasedProducts');
+    const noBoughtProducts = document.createElement('section');
+    noBoughtProducts.classList.add('noBoughtProducts');
+    const purchasedProductsList = document.getElementById('ordersSection');
     console.log('No tienes compras realizadas');
-    productItem.innerHTML = `
-    <h3>No tienes compras realizadas</h3>`;
-    purchasedProductsList.appendChild(productItem);
+    noBoughtProducts.innerHTML = `
+    <img src="./emptyCart2.svg" alt="empty cart" id="emptyCart">
+    <h4>No tienes compras realizadas</h4>
+    <button id="backToProducts">Volver a productos</button>
+    `;
+    purchasedProductsList.appendChild(noBoughtProducts);
 
   }
   else {
