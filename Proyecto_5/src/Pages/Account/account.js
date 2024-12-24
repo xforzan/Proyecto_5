@@ -201,23 +201,34 @@ window.rightClick = () => {
     const newPassword = document.getElementById('newPassword').value;
     const confirmNewPassword = document.getElementById('confirmNewPassword').value;
 
+    if (!currentPassword){
 
-    if (currentPassword !== user.password) {
-      alert('error', '¡Ups!', 'La contraseña actual es incorrecta');
-      return;
     }
+    else {
+      if (currentPassword !== user.password) {
+        alert('error', '¡Ups!', 'La contraseña actual es incorrecta');
+        return;
+      }
+  
+  
+      if (newPassword !== confirmNewPassword) {
+        alert('error', '¡Ups!', 'Las nuevas contraseñas no coinciden');
+        return;
+      }
 
-
-    if (newPassword !== confirmNewPassword) {
-      alert('error', '¡Ups!', 'Las nuevas contraseñas no coinciden');
-      return;
+      if (newPassword === currentPassword) {
+        alert('error', '¡Ups!', 'La nueva contraseña no puede ser igual a la actual');
+        return;
+      }
+  
+  
+      if (newPassword === '') {
+        alert('error', '¡Ups!', 'La nueva contraseña no puede estar vacía');
+        return;
+      }
+      user.password = newPassword;
     }
-
-
-    if (newPassword.trim() === '') {
-      alert('error', '¡Ups!', 'La nueva contraseña no puede estar vacía');
-      return;
-    }
+    
 
     const newName = document.getElementById('name').value;
     const newSurname = document.getElementById('surname').value;
@@ -243,7 +254,6 @@ window.rightClick = () => {
     user.postalCode = newPostalCode;
     user.address = newAddress;
     user.avatar = newAvatar;
-    user.password = newPassword;
     user.email = newEmail;
 
 

@@ -38,7 +38,7 @@ footer.innerHTML = `
         <ul>
             <li>Enlaces</li>
             <li><a class="contact" href="#">Contacto</a></li>
-            <li>< class="aboutUs" a href="#">Sobre Nosotros</a></li>
+            <li><a class="aboutUs" href="#">Sobre Nosotros</a></li>
             <li><a href="#">Política de privacidad</a></li>
             <li><a href="#">Términos y condiciones</a></li>
         </ul>
