@@ -155,6 +155,10 @@ window.rightClick = () => {
     <h4>No tienes compras realizadas</h4>
     <button id="backToProducts">Volver a productos</button>
     `;
+    const backToProducts = noBoughtProducts.querySelector('#backToProducts');
+    backToProducts.addEventListener('click', () => {
+      window.location.reload();
+    });
     purchasedProductsList.appendChild(noBoughtProducts);
 
   }

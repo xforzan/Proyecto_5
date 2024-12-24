@@ -2,6 +2,7 @@ import './notFound.css'
 import { cleanPage } from '../../Utils/cleanPage';
 
 export const notFound = (from, query) => {
+    document.title = 'No encontrado';
     cleanPage('main');
     const main = document.querySelector('main');
     if (from === "searchBar"){
