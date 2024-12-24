@@ -13,7 +13,13 @@ export const emptyCart = () => {
         <h1>Carrito</h1>
         <img src="./emptyCart.svg" alt="empty cart" id="emptyCart">
         <h2>El carrito está vacío</h2>
+        <button id="backToProducts">Volver a productos</button>
     `;
+    
+    const backToProducts = emptyCartContainer.querySelector("#backToProducts");
+    backToProducts.addEventListener("click", () => {
+        window.location.reload();
+    });
     
     const main = document.querySelector("main");
     main.appendChild(emptyCartContainer);
