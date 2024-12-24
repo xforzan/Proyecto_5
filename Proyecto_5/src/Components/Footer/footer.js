@@ -37,7 +37,7 @@ footer.innerHTML = `
         </div>
         <ul>
             <li>Enlaces</li>
-            <li><a href="#">Contacto</a></li>
+            <li class="contact"><a href="#">Contacto</a></li>
             <li><a href="#">Política de privacidad</a></li>
             <li><a href="#">Política de reembolso</a></li>
             <li><a href="#">Términos y condiciones</a></li>

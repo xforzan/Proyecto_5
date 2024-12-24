@@ -13,7 +13,7 @@ export const header = () => {
     <img src="/logo.svg" alt="logo" id="logo">
     <nav class="links">
     <ul>
-    <li id="contact"><a href="#">Contacto</a></li>
+    <li class="contact"><a href="#">Contacto</a></li>
     <li id="aboutUs"><a href="#">Sobre Nosotros</a></li>
     </ul>
     </nav>
