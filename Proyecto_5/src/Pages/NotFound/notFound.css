@@ -1,3 +1,25 @@
 .notFound{
     padding: 20px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+#backToProducts{
+    padding: 10px;
+    text-align: center;
+    border: none;
+    border-radius: 30px;
+    background-color: black;
+    color : white;
+    font-weight: 500;
+    width: min-content;
+    cursor: pointer;
+    white-space: nowrap;
+    font-size: 15px;
+    
+}
+
+#backToProducts:hover{
+    background-color: #333;
 }

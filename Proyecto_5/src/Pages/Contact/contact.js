@@ -6,22 +6,37 @@ import { alert } from '../../Utils/alert';
 export const contact = () => {
     cleanPage('main');
     scrollToTop();
+
     const contactContainer = document.createElement('div');
     contactContainer.classList.add('contact-container');
     contactContainer.innerHTML = `
         <h1>Contacto</h1>
-        <form id="contactForm">
-            <label for="name">Nombre:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Correo electrónico:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Mensaje:</label>
-            <textarea id="message" name="message" required></textarea>
-            <button type="submit" id="sendMessage">Enviar mensaje</button>
-        </form>
+        <section id="contactForm">
+            <input type="text" id="name" name="name" placeholder="Nombre" required>
+            <input type="email" id="email" name="email" placeholder="Correo electrónico" required>
+            <input type="text" id="message" name="message" placeholder="Mensaje" required></textarea>
+        </section>
+        <button id="sendMessage">Enviar mensaje</button>
     `;
-    const form = contactContainer.querySelector('#contactForm');
-    form.addEventListener('submit', (event) => {});
+
+    const submit = contactContainer.querySelector('#sendMessage');
+
+    submit.addEventListener('click', () => {
+        let name = contactContainer.querySelector('#name').value;
+        let email = contactContainer.querySelector('#email').value;
+        let message = contactContainer.querySelector('#message').value;
+
+        if (!name || !email || !message) {
+            alert('error', 'Error', 'Por favor complete todos los campos.');
+            return;
+        } else {
+            alert('filterSuccess', 'Mensaje enviado', 'Su mensaje ha sido enviado correctamente.');
+            contactContainer.querySelector('#name').value = '';
+            contactContainer.querySelector('#email').value = '';
+            contactContainer.querySelector('#message').value ='';
+        }
+    });
+
     const main = document.querySelector('main');
     main.appendChild(contactContainer);
 }
