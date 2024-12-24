@@ -107,7 +107,8 @@ export const account = () => {
   const accountSection = document.getElementById('accountSection');
   
   ordersBtn.addEventListener('click', () => {
-    ordersSection.style.display = 'contents';
+    ordersSection.style.display = 'flex';
+    ordersSection.style.flexDirection = 'column';
     accountSection.style.display = 'none';
   });
   
