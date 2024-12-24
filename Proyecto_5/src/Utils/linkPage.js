@@ -1,7 +1,10 @@
 
 export const linkPage = (id, page) => {
-    const link = document.querySelector(id);
-    link.addEventListener("click", () => {
-        page();
+    const links = document.querySelectorAll(id);
+    links.forEach(link => {
+        link.addEventListener("click", () => {
+            page();
+        });
     });
+    
 };
