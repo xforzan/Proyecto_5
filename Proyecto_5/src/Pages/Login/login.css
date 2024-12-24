@@ -3,7 +3,6 @@
     background-color: white;
     padding: 20px;
     border-radius: 30px;
-    /* box-shadow: 0px 0px 10px 1px #00000046; */
     width: 100vw;
     max-width: 900px;
     margin: 0 auto;
@@ -46,8 +45,8 @@
     border-radius: 30px;
     cursor: pointer;
     margin-top: 10px;
-    align-self: center;
     transition: 500ms;
+    margin: 0 auto;
 }
 
 
@@ -66,6 +65,7 @@
     cursor: pointer;
     text-align: center;
     margin-top: 10px;
+    margin: 0 auto;
 }
 
 

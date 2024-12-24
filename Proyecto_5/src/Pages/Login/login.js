@@ -57,11 +57,11 @@ export const login = () => {
     toggleButton.addEventListener('click', () => {
 
         if (loginForm.style.display === 'none') {
-            loginForm.style.display = 'block';
+            loginForm.style.display = 'flex';
             registerForm.style.display = 'none';
         } else {
             loginForm.style.display = 'none';
-            registerForm.style.display = 'block';
+            registerForm.style.display = 'flex';
         }
 
 
