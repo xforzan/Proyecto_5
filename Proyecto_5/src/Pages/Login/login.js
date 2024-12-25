@@ -93,6 +93,11 @@ export const login = () => {
             return;
         }
 
+        if (users.find(u => u.email === email)) {
+            alert('error', '¡Ups!', 'Ya existe un usuario con ese correo electrónico.');
+            return;
+        }
+
 
         const highestId = Math.max(...users.map(user => user.id), 0) + 1;
 
