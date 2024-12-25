@@ -69,8 +69,20 @@ a{
 
 }
 
+.error-html-container{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+}
+
 .success-html-container{
   display: flex;
   flex-direction: column;
   gap: 20px;
+
+}
+
+.swal2-container, .swal2-center, .swal2-backdrop-show div{
+  overflow: hidden;
 }
