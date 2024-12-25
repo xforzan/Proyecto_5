@@ -1,6 +1,6 @@
 
 .login-container {
-    background-color: white;
+    background-color: var(--primary-background);
     padding: 20px;
     border-radius: 30px;
     width: 100vw;
@@ -39,8 +39,8 @@
 
 .login-container button {
     padding: 10px;
-    background-color: black;
-    color: #fff;
+    background-color: var(--buttons-background);
+    color: var(--buttons-color);
     border: none;
     border-radius: 30px;
     cursor: pointer;

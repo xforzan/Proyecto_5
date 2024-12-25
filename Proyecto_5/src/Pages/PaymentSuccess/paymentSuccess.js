@@ -10,7 +10,6 @@ import { listProducts } from '../../main';
 
 export const paymentSuccess = (total,name, toCheckout) => {
     document.title = 'Pago exitoso';
-    console.log(name,total);
     cleanPage('main');
     scrollToTop();
 

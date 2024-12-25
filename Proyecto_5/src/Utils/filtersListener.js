@@ -45,7 +45,6 @@ const orderByButton = document.querySelector("#ordenarPor");
 if (productsList.length !== 0) {
     
  capacityButton.addEventListener("click", () => {
-    console.log(hiddenProducts);
 
 
     const defaultOption = "<option value='default'>Selecciona una capacidad</option>";

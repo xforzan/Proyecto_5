@@ -2,6 +2,10 @@
 
 :root{
   --primary-color: #ffffff;
+  --secondary-color: #000000;
+  --products-color: #ffffff;
+  --buttons-color: #ffffff;
+  --buttons-background: #000000;
 }
 
 body{

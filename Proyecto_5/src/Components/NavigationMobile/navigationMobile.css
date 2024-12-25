@@ -5,7 +5,7 @@
     margin-inline: 20px;
     border-radius: 30px;
     padding: 30px;
-    background-color: black;
+    background-color: var(--secondary-color);
     height: 50px;
     justify-content: space-between;
     align-items: center;
@@ -33,7 +33,7 @@
     position: absolute;
     top: -5px;
     right: -10px;
-    background-color: white;
+    background-color: var(--primary-color);
     color: black;
     border-radius: 50%;
     min-width: 24px;

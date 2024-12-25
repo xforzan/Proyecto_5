@@ -59,8 +59,8 @@
 }
 
 .checkout-btn{
-    background-color: black;
-    color: white;
+    background-color: var(--buttons-background);
+    color: var(--buttons-color);
     padding: 10px;
     border: none;
     border-radius: 30px;

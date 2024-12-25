@@ -4,7 +4,7 @@ header{
     align-items: center;
     padding: 30px;
     padding-inline: 50px;
-    background-color: black;
+    background-color: var(--secondary-color);
     position: sticky;
     top: 0;
     z-index: 99;
@@ -36,7 +36,7 @@ header img{
     position: absolute;
     top: -5px;
     right: -10px;
-    background-color: white;
+    background-color: var(--primary-color);
     color: black;
     border-radius: 50%;
     min-width: 24px;

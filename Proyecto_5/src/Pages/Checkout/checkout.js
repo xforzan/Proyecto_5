@@ -27,7 +27,6 @@ export const checkout = (toCheckout) => {
         } else {
             productCount.push({ productId: productId, quantity: 1 });
         }
-        console.log(productCount);
     });
 
 
@@ -193,7 +192,5 @@ export const checkout = (toCheckout) => {
         document.getElementById('city').value = user.city;
         document.getElementById('zip').value = user.postalCode;
         document.getElementById('country').value = user.country;
-
-        console.log(user);
     }
 };

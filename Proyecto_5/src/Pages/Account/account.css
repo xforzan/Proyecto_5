@@ -23,8 +23,8 @@
 .userDetails button{
   margin-top: 10px;
   padding: 10px 20px;
-  background-color: black;
-  color: white;
+  background-color: var(--buttons-background);
+  color: var(--buttons-color);
   border: none;
   border-radius: 30px;
   cursor: pointer;
@@ -84,8 +84,8 @@
   min-width: 100px;
   max-width: fit-content;
   padding: 10px 20px;
-  background-color: black;
-  color: white;
+  background-color: var(--buttons-background);
+  color: var(--buttons-color);
   border: none;
   border-radius: 30px;
   cursor: pointer;
@@ -126,37 +126,13 @@
 
 
 
-
-
-
-
-
-
-
-
-  
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
   .btns {
     width: 280px;
     margin: 35px auto;
     position: relative;
     border-radius: 30px;
     box-shadow: 0px 0px 10px #9c9c9c;
-    background: var(--lightThemeBackground);
+    background: var(--primary-color);
     font-family: "Poppins", sans-serif;
     font-weight: bold;
     height: 20px;
@@ -178,7 +154,7 @@
     position: absolute;
     width: 140px;
     height: 100%;
-    background: black;
+    background: var(--buttons-background);
     border-radius: 30px;
     transition: .5s;
   }
@@ -190,7 +166,7 @@
 }
 
 .selected{
-  color: white;
+  color: var(--buttons-color);
 }
 
 
