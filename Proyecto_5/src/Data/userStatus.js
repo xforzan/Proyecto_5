@@ -1,17 +1,7 @@
 let localStatus = localStorage.getItem('userStatus') 
   ? JSON.parse(localStorage.getItem('userStatus')) 
-  : { logged: true, id: 1 };
+  : { logged: false };
 
 localStorage.setItem('userStatus', JSON.stringify(localStatus));
 
 export let userStatus = localStatus;
-
-
-
-
-
-
-// export const userStatus = {
-//     logged: true,
-//     id: 1,
-// };

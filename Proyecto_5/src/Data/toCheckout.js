@@ -1,2 +1,2 @@
 
-export const toCheckout = [1,2,3];
+export const toCheckout = [];
