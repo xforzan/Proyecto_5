@@ -42,7 +42,7 @@ export const header = () => {
 
   const cartCountElement = document.getElementById('cart-count');
   
-  let cartCount = localStorage.getItem('cartCount') ? parseInt(localStorage.getItem('cartCount')) : 0;
+  let cartCount = localStorage.getItem('cartCount') ? localStorage.getItem('cartCount') : 0;
   cartCountElement.textContent = cartCount;
 
   cartCountItems(cartCount, cartCountElement);

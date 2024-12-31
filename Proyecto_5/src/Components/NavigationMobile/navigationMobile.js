@@ -29,7 +29,7 @@ export const navigationMobile = () => {
 
     const cartCountElement = document.getElementById('cart-count2');
   
-    let cartCount2 = localStorage.getItem('cartCount') ? parseInt(localStorage.getItem('cartCount')) : 0;
+    let cartCount2 = localStorage.getItem('cartCount') ? localStorage.getItem('cartCount') : 0;
     cartCountElement.textContent = cartCount2;
 
     cartCountItems(cartCount2, cartCountElement);

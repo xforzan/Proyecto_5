@@ -8,7 +8,7 @@ export const cartCountItems = (cartCount, cartCountElement) => {
       counter += item.quantity;
     }
     cartCount = counter;
-    if (cartCount > 98) {
+    if (cartCount > 99) {
       cartCountElement.textContent = '+99';
       localStorage.setItem('cartCount', '+99');
     } else{
