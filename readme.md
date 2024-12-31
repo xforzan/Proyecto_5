@@ -49,3 +49,18 @@ Para probar el inicio de sesión y las funcionalidades de la tienda, puedes usar
 Una vez que inicies sesión, podrás acceder a la sección "Mi Cuenta", donde verás los productos que hayas comprado (almacenados localmente en el navegador mediante LocalStorage).
 
 > **Nota**: Las compras no se guardarán permanentemente, ya que el proyecto usa LocalStorage, que solo retiene los datos mientras la sesión esté activa.
+
+## Cupones
+
+A continuación se muestran algunos cupones de descuento que puedes usar al realizar tus compras en Ishop:
+
+- **10OFF**: Obtén 10€ de descuento en tu compra.
+- **20OFF**: Obtén 20€ de descuento en tu compra.
+- **30OFF**: Obtén 30€ de descuento en tu compra.
+
+### ¿Cómo usar los cupones?
+1. Agrega los productos que desees a tu carrito de compras.
+2. Al momento de finalizar la compra, ingresa el código del cupón en el campo "Código de descuento" antes de completar el pago.
+3. El descuento se aplicará automáticamente a tu total.
+
+> **Nota**: Los cupones son válidos por un tiempo ilimitado y no tienen restricciones de uso.
