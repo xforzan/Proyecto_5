@@ -20,7 +20,7 @@ const localCart = localStorage.getItem('productsList') ? JSON.parse(localStorage
     },
     {
       id: 2,
-      quantity: 1,
+      quantity: 19,
         name:'POCO X6 Pro 5G 12/512GB Negro Libre',
         shortName:'POCO X6 Pro 5G',
         price:322.90,
@@ -34,7 +34,7 @@ const localCart = localStorage.getItem('productsList') ? JSON.parse(localStorage
     },
     {
       id: 3,
-      quantity: 0,
+      quantity: 3,
         name:'Apple iPhone 15 Pro 128GB Titanio Natural Libre',
         shortName:'Apple iPhone 15 Pro',
         price:1098.93,
@@ -48,7 +48,7 @@ const localCart = localStorage.getItem('productsList') ? JSON.parse(localStorage
     },
     {
       id: 4,
-      quantity: 1,
+      quantity: 7,
         name:'Apple iPhone 13 128GB Medianoche Libre',
         shortName:'Apple iPhone 13',
         price:609.01,
@@ -62,7 +62,7 @@ const localCart = localStorage.getItem('productsList') ? JSON.parse(localStorage
     },
     {
       id: 5,
-      quantity: 1,
+      quantity: 10,
         name:'Móvil Samsung Galaxy S24 Ultra 12/512GB Negro Titanium Libre',
         shortName:'Samsung Galaxy S24 Ultra',
         price:1299,
@@ -76,7 +76,7 @@ const localCart = localStorage.getItem('productsList') ? JSON.parse(localStorage
     },
     {
       id: 6,
-      quantity: 1,
+      quantity: 19,
         name:'Móvil Apple iPhone 16 Plus 128GB Rosa',
         shortName:'Apple iPhone 16 Plus',
         price:1109,
@@ -90,7 +90,7 @@ const localCart = localStorage.getItem('productsList') ? JSON.parse(localStorage
     },
     {
       id: 7,
-      quantity: 1,
+      quantity: 12,
         name:'Monitor ASUS ROG Strix OLED XG27AQDMG 26.5" OLED QHD 240Hz FreeSync Premium',
         shortName:'ASUS ROG Strix OLED XG27AQDMG',
         price:649,
@@ -104,7 +104,7 @@ const localCart = localStorage.getItem('productsList') ? JSON.parse(localStorage
     },
     {
       id: 8,
-      quantity: 1,
+      quantity: 34,
         name:'Móvil Apple iPhone 16 Pro 128GB Titanio Desierto Libre',
         shortName:'Apple iPhone 16 Pro',
         price:1219,
@@ -132,7 +132,7 @@ const localCart = localStorage.getItem('productsList') ? JSON.parse(localStorage
     },
     { 
       id: 10,
-      quantity: 1,
+      quantity: 2,
         name:'LG 65UT73006LA 65" LED UltraHD 4K HDR10 Pro WebOS24 AI ThinQ',
         shortName:'LG 65UT73006LA',
         price:549,
