@@ -272,7 +272,6 @@ window.rightClick = () => {
 
 
     window.location.reload();
-    alert('Datos guardados correctamente');
     alert('success', '¡Datos guardados correctamente!', undefined);
   });
 
@@ -282,13 +281,4 @@ window.rightClick = () => {
     logOut();
     window.location.reload();
   });
-
-
-
-
-
-
-
-
-
 };

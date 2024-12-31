@@ -3,6 +3,7 @@ import './footer.css';
 
 export const footer = () => {
 const footer = document.querySelector('footer');
+const currenYear = new Date().getFullYear();
 footer.innerHTML = `
  <div class="sobre-nosotros">
             <svg id="footerLogo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="412" height="112" viewBox="0 0 309 84" preserveAspectRatio="xMidYMid meet">
@@ -69,7 +70,9 @@ footer.innerHTML = `
             <img src="./paypal.svg" alt="Paypal">
             <img src="./maestro.svg" alt="Maestro">
         </div>
-        <p class="copyright"> Copyright © 2024 Tutienda. Todos los derechos reservados.</p>
+        <p class="copyright"> Copyright © ${currenYear} Ibuy. Todos los derechos reservados.</p>
 `;
+
+
 
 };

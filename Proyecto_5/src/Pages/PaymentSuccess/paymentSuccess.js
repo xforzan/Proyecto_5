@@ -38,7 +38,7 @@ export const paymentSuccess = (total,name, toCheckout) => {
               </div>
 
               <div class="senderName">
-               <p>Nombre del remitente:</p>
+               <p>Nombre del destinatario:</p>
                <span>${name}</span>
               </div>
 
