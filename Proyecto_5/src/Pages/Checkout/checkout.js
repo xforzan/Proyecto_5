@@ -132,7 +132,7 @@ export const checkout = (toCheckout) => {
     <hr>
     <div class="total">
         <p>Total:</p>
-        <span id="total">${total + 3.99}</span>
+        <span id="total">${(Math.round((total + 3.99) * 100) / 100).toFixed(2)}</span>
     </div>
     `;
     checkoutSummary.appendChild(detailsSection);

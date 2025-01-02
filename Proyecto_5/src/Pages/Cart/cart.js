@@ -97,7 +97,7 @@ export const cartPage = () => {
         const totalElement = document.createElement('p');
         totalElement.textContent = `A pagar:`;
         const totalAmount = document.createElement('span');
-        totalAmount.textContent = `${total}€`;
+        totalAmount.textContent = `${(Math.round(total * 100) / 100).toFixed(2)}€`;
         summary.classList.add('cartSummary');
         summary.appendChild(totalElement);
         summary.appendChild(totalAmount);
